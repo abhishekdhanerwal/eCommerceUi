@@ -1,124 +1,166 @@
-<!doctype html>
-<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
-<!--
-  angular-starter-kit
-
-  @author Andrea SonnY <andreasonny83@gmail.com>
-  @copyright 2016 Andrea SonnY <andreasonny83@gmail.com>
-
-  This code may only be used under the MIT style license.
-
-  @license MIT  https://andreasonny.mit-license.org/@2016/
- -->
+<!DOCTYPE html>
+<html lang="en" data-ng-app="app">
 <head>
-  <!-- build:baseUrl -->
-  <base href="/">
-  <!--  this will create a <base href="/your website baseUrl"> when Gulp compiles the build project -->
-
-  <!-- endbuild -->
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Angular Starter Kit">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Angular Starter Kit</title>
-
-  <!-- Disable tap highlight on IE -->
-  <meta name="msapplication-tap-highlight" content="no">
-
-  <!-- Web Application Manifest -->
-  <link rel="manifest" href="manifest.json">
-
-  <!-- Add to homescreen for Chrome on Android -->
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="application-name" content="Angular Starter Kit">
-  <link rel="icon" sizes="192x192" href="images/chrome-touch-icon-192x192.png">
-
-  <!-- Add to homescreen for Safari on iOS -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Angular Starter Kit">
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-
-  <!-- Tile icon for Win8 (144x144 + tile color) -->
-  <meta name="msapplication-TileImage" content="images/ms-touch-icon-144x144-precomposed.png">
-  <meta name="msapplication-TileColor" content="#2F3BA2">
-
-  <link rel="shortcut icon" href="favicon.ico">
-
-  <!-- Color the status bar on mobile devices -->
-  <meta name="theme-color" content="#2F3BA2">
-
-  <!--[if IE]>
-  <link rel="shortcut icon" href="favicon.ico">
-  <![endif]-->
-
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-  <!-- build:css(./.tmp) css/main.min.css -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css" />
-    <!-- endbower -->
-    <link rel="stylesheet" href="styles/main.css">
-  <!-- endbuild -->
-
-  <script>document.documentElement.className = document.documentElement.className.replace('no-js','js');</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="{{app.description}}">
+    <meta name="keywords" content="app, responsive, angular, bootstrap, dashboard, admin">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <title data-ng-bind="pageTitle()">Packet - Angular Bootstrap Admin Template</title>
+    <!-- Google fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Themify Icons -->
+    <link rel="stylesheet" href="../../bower_components/themify-icons/themify-icons.css">
+    <!-- Flag Icons -->
+    <link rel="stylesheet" href="../../bower_components/flag-icon-css/css/flag-icon.min.css">
+    <!-- Loading Bar -->
+    <link rel="stylesheet" href="../../bower_components/angular-loading-bar/build/loading-bar.min.css">
+    <!-- Animate Css -->
+    <link rel="stylesheet" href="../../bower_components/animate.css/animate.min.css">
+    <!-- Perfect Scrollbar Css -->
+    <link rel="stylesheet" href="../../bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css">
+    <!-- Date Range Picker Css -->
+    <link rel="stylesheet" href="../../bower_components/bootstrap-daterangepicker/daterangepicker-bs3.css">
+    <!-- Angular ui-switch Css -->
+    <link rel="stylesheet" href="../../bower_components/angular-ui-switch/angular-ui-switch.min.css">
+    <!-- Angular Toaster Css -->
+    <link rel="stylesheet" href="../../bower_components/AngularJS-Toaster/toaster.css">
+    <!-- Angular Ng-Aside Css -->
+    <link rel="stylesheet" href="../../bower_components/angular-aside/dist/css/angular-aside.min.css">
+    <!-- Angular Notification Icons Css -->
+    <link rel="stylesheet" href="../../bower_components/angular-notification-icons/dist/angular-notification-icons.min.css">
+    <!-- V-Accordion Css -->
+    <link rel="stylesheet" href="../../bower_components/v-accordion/dist/v-accordion.min.css">
+    <!-- V-Button Css -->
+    <link rel="stylesheet" href="../../bower_components/v-button/dist/v-button.min.css">
+    <!-- Sweet Alert Css -->
+    <link rel="stylesheet" href="../../bower_components/sweetalert/lib/sweet-alert.css">
+    <!-- Ladda Buttons Css -->
+    <link rel="stylesheet" href="../../bower_components/ladda/dist/ladda-themeless.min.css">
+    <!-- Angular Awesome Slider Css -->
+    <link rel="stylesheet" href="../../bower_components/angular-awesome-slider/dist/css/angular-awesome-slider.min.css">
+    <!-- Slick Carousel Css -->
+    <link rel="stylesheet" href="../../bower_components/slick-carousel/slick/slick.css">
+    <link rel="stylesheet" href="../../bower_components/slick-carousel/slick/slick-theme.css">
+    <!-- Packet CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/plugins.css">
+    <!-- Packet Theme -->
+    <link rel="stylesheet" data-ng-href="assets/css/themes/{{ app.layout.theme }}.css" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" />
 </head>
+<body ng-controller="AppCtrl">
+    <div ui-view id="app" class="lyt-4" ng-class="{'app-mobile' : app.isMobile, 'app-navbar-fixed' : app.layout.isNavbarFixed, 'app-sidebar-fixed' : app.layout.isSidebarFixed, 'app-sidebar-closed':app.layout.isSidebarClosed, 'app-footer-fixed':app.layout.isFooterFixed}"></div>
 
-<body>
-  <!--[if lt IE 8]>
-  <p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/?locale=en">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
-
-  <page-header></page-header>
-
-  <!-- Main view for templates -->
-  <div ng-view class="page"></div>
-
-  <page-footer></page-footer>
-
-  <!-- build:main(./.tmp) js/main.min.js -->
-    <!-- bower:js -->
-    <script src="../bower_components/angular/angular.js"></script>
-    <script src="../bower_components/angular-route/angular-route.js"></script>
-    <script src="../bower_components/angular-animate/angular-animate.js"></script>
-    <script src="../bower_components/angular-aria/angular-aria.js"></script>
-    <script src="../bower_components/angular-messages/angular-messages.js"></script>
-    <script src="../bower_components/angular-material/angular-material.js"></script>
-    <!-- endbower -->
-
-    <script src="app/app.js"></script>
-
-    <script src="app/page-header/page-header.directive.js"></script>
-    <script src="app/page-footer/page-footer.directive.js"></script>
-
-    <script src="app/home/home.controller.js"></script>
-
-    <!-- build:templates -->
-      <!-- minify and concatenate all template files -->
-    <!-- endbuild -->
-
-  <!-- endbuild -->
-
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID -->
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-XXXXX-Y', 'auto');
-    ga('send', 'pageview');
-  </script>
-  <!-- End Google Analytics -->
-
-  <script>
-    angular.element(document).ready(function() {
-      angular.bootstrap(document, ['app']);
-    });
-  </script>
-  <!-- Built with love by @andreasonny83 -->
+    <!-- jQuery -->
+    <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Fastclick -->
+    <script src="../../bower_components/fastclick/lib/fastclick.js"></script>
+    <!-- Modernizr -->
+    <script src="../../bower_components/components-modernizr/modernizr.js"></script>
+    <!-- Moment -->
+    <script src="../../bower_components/moment/min/moment.min.js"></script>
+    <!-- Perfect Scrollbar -->
+    <script src="../../bower_components/perfect-scrollbar/js/min/perfect-scrollbar.jquery.min.js"></script>
+    <!-- Date Range Picker -->
+    <script src="../../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- Sweet Alert -->
+    <script src="../../bower_components/sweetalert/lib/sweet-alert.min.js"></script>
+    <!-- Spin -->
+    <script src="../../bower_components/spin.js/spin.js"></script>
+    <!-- Ladda Buttons -->
+    <script src="../../bower_components/ladda/dist/ladda.min.js"></script>
+    <!-- Slick Carousel -->
+    <script src="../../bower_components/slick-carousel/slick/slick.min.js"></script>
+    <!-- Angular -->
+    <script src="../../bower_components/angular/angular.min.js"></script>
+    <script src="../../bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script src="../../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="../../bower_components/angular-touch/angular-touch.min.js"></script>
+    <script src="../../bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="../../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <!-- Angular storage -->
+    <script src="../../bower_components/ngstorage/ngStorage.min.js"></script>
+    <!-- Angular Translate -->
+    <script src="../../bower_components/angular-translate/angular-translate.min.js"></script>
+    <script src="../../bower_components/angular-translate-loader-url/angular-translate-loader-url.min.js"></script>
+    <script src="../../bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+    <script src="../../bower_components/angular-translate-storage-local/angular-translate-storage-local.min.js"></script>
+    <script src="../../bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.min.js"></script>
+    <!-- oclazyload -->
+    <script src="../../bower_components/oclazyload/dist/ocLazyLoad.min.js"></script>
+    <!-- breadcrumb -->
+    <script src="../../bower_components/angular-breadcrumb/dist/angular-breadcrumb.min.js"></script>
+    <!-- angular-swipe -->
+    <script src="../../bower_components/angular-swipe/dist/angular-swipe.min.js"></script>
+    <!-- UI Bootstrap -->
+    <script src="../../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <!-- Loading Bar -->
+    <script src="../../bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
+    <!-- Angular Scroll -->
+    <script src="../../bower_components/angular-scroll/angular-scroll.min.js"></script>
+    <!-- Angular Fullscreen -->
+    <script src="../../bower_components/angular-fullscreen/src/angular-fullscreen.js"></script>
+    <!-- Angular DateRangePicker -->
+    <script src="../../bower_components/ng-bs-daterangepicker/dist/ng-bs-daterangepicker.min.js"></script>
+    <!-- Angular Truncate -->
+    <script src="../../bower_components/angular-truncate/src/truncate.js"></script>
+    <!-- Angular Moment -->
+    <script src="../../bower_components/angular-moment/angular-moment.min.js"></script>
+    <!-- Angular ui-switch -->
+    <script src="../../bower_components/angular-ui-switch/angular-ui-switch.min.js"></script>
+    <!-- Angular Toaster -->
+    <script src="../../bower_components/AngularJS-Toaster/toaster.js"></script>
+    <!-- Angular Ng-Aside -->
+    <script src="../../bower_components/angular-aside/dist/js/angular-aside.min.js"></script>
+    <!-- V-Accordion -->
+    <script src="../../bower_components/v-accordion/dist/v-accordion.min.js"></script>
+    <!-- V-Button -->
+    <script src="../../bower_components/v-button/dist/v-button.min.js"></script>
+    <!-- Angular Sweet Alert -->
+    <script src="../../bower_components/angular-sweetalert-promised/SweetAlert.min.js"></script>
+    <!-- Angular Notification Icons -->
+    <script src="../../bower_components/angular-notification-icons/dist/angular-notification-icons.min.js"></script>
+    <!-- Angular Awesome Slider -->
+    <script src="../../bower_components/angular-awesome-slider/dist/angular-awesome-slider.min.js"></script>
+    <!-- Angular Ladda -->
+    <script src="../../bower_components/angular-ladda/dist/angular-ladda.min.js"></script>
+    <!-- Angular Slick Carousel -->
+    <script src="../../bower_components/angular-slick-carousel/dist/angular-slick.min.js"></script>
+    <!-- Packet Scripts -->
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/config.constant.js"></script>
+    <script src="assets/js/config.router.js"></script>
+    <!-- Packet Directives -->
+    <script src="assets/js/directives/toggle.js"></script>
+    <script src="assets/js/directives/perfect-scrollbar.js"></script>
+    <script src="assets/js/directives/empty-links.js"></script>
+    <script src="assets/js/directives/sidebars.js"></script>
+    <script src="assets/js/directives/off-click.js"></script>
+    <script src="assets/js/directives/full-height.js"></script>
+    <script src="assets/js/directives/panel-tools.js"></script>
+    <script src="assets/js/directives/char-limit.js"></script>
+    <script src="assets/js/directives/dismiss.js"></script>
+    <script src="assets/js/directives/compare-to.js"></script>
+    <script src="assets/js/directives/select.js"></script>
+    <script src="assets/js/directives/messages.js"></script>
+    <script src="assets/js/directives/chat.js"></script>
+    <script src="assets/js/directives/touchspin.js"></script>
+    <script src="assets/js/directives/file-upload.js"></script>
+    <script src="assets/js/directives/letter-icon.js"></script>
+    <script src="assets/js/directives/landing-header.js"></script>
+    <!-- Packet Controllers -->
+    <script src="assets/js/controllers/mainCtrl.js"></script>
+    <script src="assets/js/controllers/inboxCtrl.js"></script>
+    <script src="assets/js/controllers/bootstrapCtrl.js"></script>
 </body>
 </html>
