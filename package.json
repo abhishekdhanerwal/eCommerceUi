@@ -1,18 +1,32 @@
 {
-  "name": "angular-starter-kit",
-  "description": "Starter Kit for Angular 1.5+ projects",
+  "name": "eCommerce",
+  "description": "eCommerce",
   "version": "1.4.0",
-  "author": "Andrea SonnY <andreasonny83@gmail.com>",
+  "author": "Kapil",
   "repository": {
     "type": "git",
-    "url": "https://github.com/andreasonny83/angular-starter-kit"
+    "url": "https://github.com/abhishekdhanerwal/eCommerceUi.git"
   },
-  "bugs": {
-    "url": "https://github.com/andreasonny83/angular-starter-kit/issues"
-  },
+  "keywords": [
+    "AngularJS",
+    "admin",
+    "admin",
+    "dashboard",
+    "admin",
+    "panel",
+    "app",
+    "charts",
+    "components",
+    "ui",
+    "responsive",
+    "layout",
+    "route",
+    "web",
+    "app",
+    "widgets"
+  ],
   "license": "MIT",
   "devDependencies": {
-    "bower": "^1.8.0",
     "browser-sync": "^2.13.0",
     "connect-history-api-fallback": "^1.2.0",
     "del": "^2.2.1",
@@ -20,6 +34,7 @@
     "eslint-config-google": "^0.6.0",
     "gulp": "^3.9.1",
     "gulp-angular-templatecache": "^2.0.0",
+    "gulp-connect": "^5.0.0",
     "gulp-cssnano": "^2.1.2",
     "gulp-html-replace": "^1.6.1",
     "gulp-htmlmin": "^2.0.0",
