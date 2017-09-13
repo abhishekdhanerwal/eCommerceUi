@@ -102,6 +102,8 @@
     }
 
     function signin(user, password) {
+      console.log(user)
+      console.log(password)
       var deferred = $q.defer();
       var headers = {
         authorization : "Basic "

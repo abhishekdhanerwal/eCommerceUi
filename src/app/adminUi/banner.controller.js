@@ -8,13 +8,12 @@
 
   BannerCtrl.$inject = ['$state', '$scope' , '$timeout'];
   /* @ngInject */
-  function BannerCtrl($state , $scope , $timeout) {
+  function BannerCtrl($state , $scope , $timeout ) {
     var vm = this;
 
     activate();
 
     function activate() {
-
 
     }
 

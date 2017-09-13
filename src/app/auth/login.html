@@ -37,15 +37,21 @@
       <!--</div>-->
 
       <!-- Login Form -->
-      <form ng-if="vm.showLoginForm" class="margin-top-20"  name="vm.Form" role="Form" id="Form"  ng-submit="">
-        <div class="form-group"  ng-class="{'has-error':vm.Form.username.$dirty && vm.Form.username.$invalid, 'has-success':vm.Form.username.$valid}">
+      <form ng-if="vm.showLoginForm" class="margin-top-20"  name="vm.Form" role="Form" id="Form"  novalidate>
+        <div class="form-group"  ng-class="{'has-error':vm.Form.email.$dirty && vm.Form.email.$invalid, 'has-success':vm.Form.email.$valid}">
           <span class="input-icon">
-          <input type="text" ng-pattern="/^[1-9][0-9]*$/" ng-maxlength="10" ng-minlength="10" class="form-control" name="username" placeholder="Mobile" ng-model="vm.user">
-          <i class="ti-user"></i></span>
-          <span class="error text-small block"
-                ng-if="vm.Form.username.$error.pattern">Invalid Characters</span>
-          <span class="error text-small block" ng-if="vm.Form.username.$error.maxlength && !vm.Form.username.$error.pattern">Mobile Number should be of ten characters only</span>
-          <span class="error text-small block" ng-if="vm.Form.username.$error.minlength && !vm.Form.username.$error.pattern">Mobile Number should be of ten characters</span>
+             <input type="email" placeholder="E-mail" class="form-control"
+                    name="email"
+                    ng-model="vm.user.email" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" required>
+            <i class="ti-user"></i></span>
+            <span class="error text-small block" ng-if="vm.Form.email.$dirty && vm.Form.email.$error.required">Email is required.</span>
+            <span class="error text-small block" ng-if="vm.Form.email.$error.email">Please, enter a valid email address.</span>
+          <!--<input type="text" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" class="form-control" name="username" placeholder="E Mail" ng-model="vm.user">-->
+          <!--<i class="ti-user"></i></span>-->
+          <!--<span class="error text-small block"-->
+                <!--ng-if="vm.Form.username.$error.pattern">Invalid Characters</span>-->
+          <!--<span class="error text-small block" ng-if="vm.Form.username.$error.maxlength && !vm.Form.username.$error.pattern">Mobile Number should be of ten characters only</span>-->
+          <!--<span class="error text-small block" ng-if="vm.Form.username.$error.minlength && !vm.Form.username.$error.pattern">Mobile Number should be of ten characters</span>-->
         </div>
         <div class="form-group form-actions">
 
@@ -60,7 +66,7 @@
           <a ui-sref="auth.forgot"> Forgot Password </a>
         </div>
         <div class="form-actions">
-          <button type="submit" class="btn btn-success btn-block" ng-click="vm.signin()">
+          <button type="submit" class="btn btn-success btn-block" ng-click="vm.signin()" ng-disabled="vm.user.email == undefined || vm.password == undefined">
             Login
           </button>
 
@@ -73,9 +79,9 @@
 
       <!-- Signup Form -->
       <form ng-if="vm.showSignupForm" class="margin-top-20"  name="vm.SignupForm" role="SignupForm" id="SignupForm"  ng-submit="">
-        <div class="form-group"  ng-class="{'has-error':vm.Form.username.$dirty && vm.Form.username.$invalid, 'has-success':vm.Form.username.$valid}">
+        <div class="form-group"  ng-class="{'has-error':vm.SignupForm.username.$dirty && vm.SignupForm.username.$invalid, 'has-success':vm.SignupForm.username.$valid}">
           <span class="input-icon">
-          <input type="text" ng-pattern="/^[1-9][0-9]*$/" ng-maxlength="10" ng-minlength="10" class="form-control" name="username" placeholder="Name" ng-model="vm.user">
+          <input type="text" ng-pattern="/^[1-9][0-9]*$/" ng-maxlength="10" ng-minlength="10" class="form-control" name="username" placeholder="Name" ng-model="vm.user.username">
           <i class="ti-user"></i></span>
           <span class="error text-small block"
                 ng-if="vm.Form.username.$error.pattern">Invalid Characters</span>

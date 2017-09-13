@@ -10,27 +10,36 @@
       Forgot Password
     </p>
     <p class="text-center">
-      Enter your phone number and we will send you a link to reset your password.
+      Enter your email and we will send you a link to reset your password.
     </p>
     <!-- start: FORGOT BOX -->
     <div class="box-forgot">
       <ng-form name="vm.Form" role="Form" id="Form" novalidate>
-        <div class="form-group" ng-class="{'has-error':vm.Form.phoneNo.$dirty && vm.Form.phoneNo.$invalid,
-                 'has-success':vm.Form.phoneNo.$valid}">
-          <input type="phoneNo" placeholder="Phone No" ng-minlength="10" ng-maxlength="10" class="form-control" name="phoneNo" ng-model="vm.phoneNo" required>
-          <span class="error text-small block" ng-if="vm.Form.phoneNo.$dirty && vm.Form.phoneNo.$error.required">
-                        Phone number is required</span>
-          <span class="error text-small block"
-                ng-if="vm.Form.phoneNo.$error.pattern">Invalid Characters</span>
-          <span class="error text-small block" ng-if="vm.Form.phoneNo.$error.minlength">Mobile Number should be ten characters only</span>
-          <span class="error text-small block" ng-if="vm.Form.phoneNo.$error.maxlength">Mobile Number should be ten characters only</span>
+        <div class="form-group" ng-class="{'has-error':vm.Form.email.$dirty && vm.Form.email.$invalid,
+                 'has-success':vm.Form.email.$valid}">
+
+          <span class="input-icon">
+             <input type="email" placeholder="E-mail" class="form-control"
+                    name="email"
+                    ng-model="vm.email" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" required>
+            <i class="ti-user"></i></span>
+          <span class="error text-small block" ng-if="vm.Form.email.$dirty && vm.Form.email.$error.required">Email is required.</span>
+          <span class="error text-small block" ng-if="vm.Form.email.$error.email">Please, enter a valid email address.</span>
+
+          <!--<input type="phoneNo" placeholder="Phone No" ng-minlength="10" ng-maxlength="10" class="form-control" name="phoneNo" ng-model="vm.phoneNo" required>-->
+          <!--<span class="error text-small block" ng-if="vm.Form.phoneNo.$dirty && vm.Form.phoneNo.$error.required">-->
+                        <!--Phone number is required</span>-->
+          <!--<span class="error text-small block"-->
+                <!--ng-if="vm.Form.phoneNo.$error.pattern">Invalid Characters</span>-->
+          <!--<span class="error text-small block" ng-if="vm.Form.phoneNo.$error.minlength">Mobile Number should be ten characters only</span>-->
+          <!--<span class="error text-small block" ng-if="vm.Form.phoneNo.$error.maxlength">Mobile Number should be ten characters only</span>-->
           <div class="form-actions">
             <button type="submit" class="btn btn-success btn-block" ng-click="vm.submit()">
               Submit
             </button>
           </div>
+        </div>
       </ng-form>
-    </div>
 
 
     <div class="text-center margin-top-15">

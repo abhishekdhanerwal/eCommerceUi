@@ -5,9 +5,9 @@
     .module('blocks.auth')
     .controller('SigninController', SigninController);
 
-  SigninController.$inject = ['$scope', '$state',  'toaster', '$localStorage', '$timeout' ];
+  SigninController.$inject = ['$scope', '$state',  'toaster', '$localStorage', '$timeout' , 'principal' , 'role' , 'validationHelperFactory'];
   /* @ngInject */
-  function SigninController($scope, $state,  toaster, $localStorage, $timeout ) {
+  function SigninController($scope, $state,  toaster, $localStorage, $timeout , principal , role , validationHelperFactory ) {
     var vm = this;
     vm.progress = false;
     vm.showLoginForm = true;
@@ -17,48 +17,55 @@
 
     function signin() {
 
-      // principal.signin(vm.user, vm.password).then(function (user) {
-      //
-      //   vm.isAdminRole = role.isAdminRole();
-      //   vm.isSuperAdminRole = role.isSuperAdminRole();
-      //   vm.isConsumerRole = role.isConsumerRole();
-      //   vm.isManagementRole = role.isManagementRole();
-      //   vm.isCreatorRole = role.isCreatorRole();
-      //   vm.isMeterManagementRole = role.isMeterManagementRole();
-      //   vm.isVisitorAdminRole = role.isVisitorAdminRole();
-      //
-      //   if(vm.isMeterManagementRole) {
-      //     $state.go('app.complaint')
-      //   }
-      //   else if(vm.isCreatorRole || vm.isSuperAdminRole){
-      //     $state.go('app.society')
-      //   }
-      //   else if(vm.isVisitorAdminRole){
-      //     $state.go('app.visitor')
-      //   }
-      //   else{
-      //     $state.go('app.notice')
-      //   }
-      //   }, function () {
-      //     if(vm.user=="" && vm.password!="")
-      //     {
-      //       toaster.error("Username is required");
-      //     }
-      //     else if(vm.password==""&& vm.user!="")
-      //     {
-      //       toaster.error("Password is required");
-      //     }
-      //     else if(vm.user=="" && vm.password=="")
-      //     {
-      //       toaster.error("Username and password are required");
-      //     }
-      //     else {
-      //       toaster.error("Please enter valid credentials");
-      //     }
-      //     console.log(vm.user)
-      //     console.log(vm.password)
-      //   });
+      console.log(vm.Form)
+
+      if (vm.Form.$invalid) {
+        validationHelperFactory.manageValidationFailed(vm.Form);
+        toaster.error('E-Mail or password may be wrong. Please try again !!');
+        return;
       }
+      else {
+
+        principal.signin(vm.user.email, vm.password).then(function (user) {
+
+          vm.isAdminRole = role.isAdminRole();
+          vm.isSuperAdminRole = role.isSuperAdminRole();
+          vm.isConsumerRole = role.isConsumerRole();
+
+          if(vm.isMeterManagementRole) {
+            $state.go('app.complaint')
+          }
+          else if(vm.isCreatorRole || vm.isSuperAdminRole){
+            $state.go('app.society')
+          }
+          else if(vm.isVisitorAdminRole){
+            $state.go('app.visitor')
+          }
+          else{
+            $state.go('app.notice')
+          }
+        }, function () {
+          if(vm.user=="" && vm.password!="")
+          {
+            toaster.error("Username is required");
+          }
+          else if(vm.password==""&& vm.user!="")
+          {
+            toaster.error("Password is required");
+          }
+          else if(vm.user=="" && vm.password=="")
+          {
+            toaster.error("Username and password are required");
+          }
+          else {
+            toaster.error("Please enter valid credentials");
+          }
+          console.log(vm.user)
+          console.log(vm.password)
+        });
+
+      }
+    }
 
       vm.callSignup = function () {
         vm.progress = true;

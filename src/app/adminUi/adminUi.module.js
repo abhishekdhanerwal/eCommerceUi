@@ -2,7 +2,8 @@
   'use strict';
 
   angular.module('app.adminUi', [
-    'slickCarousel'
+    'slickCarousel',
+    'cfp.loadingBar'
   ]);
 })();
 

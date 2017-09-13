@@ -74,6 +74,17 @@ function (cfpLoadingBarProvider) {
     cfpLoadingBarProvider.includeSpinner = false;
 
 }]);
+
+// app.config(httpConfigurer);
+//
+// httpConfigurer.$inject = ['$httpProvider'];
+//
+// function httpConfigurer($httpProvider) {
+//   $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
+//   $httpProvider.defaults.withCredentials = true;
+// }
+
+
 // Angular-breadcrumb
 // configuration
 app.config(function ($breadcrumbProvider) {
