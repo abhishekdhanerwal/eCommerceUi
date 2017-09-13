@@ -75,14 +75,14 @@ function (cfpLoadingBarProvider) {
 
 }]);
 
-// app.config(httpConfigurer);
-//
-// httpConfigurer.$inject = ['$httpProvider'];
-//
-// function httpConfigurer($httpProvider) {
-//   $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
-//   $httpProvider.defaults.withCredentials = true;
-// }
+app.config(httpConfigurer);
+
+httpConfigurer.$inject = ['$httpProvider'];
+
+function httpConfigurer($httpProvider) {
+  $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
+  $httpProvider.defaults.withCredentials = true;
+}
 
 
 // Angular-breadcrumb

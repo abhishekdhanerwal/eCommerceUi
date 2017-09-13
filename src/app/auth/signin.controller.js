@@ -14,6 +14,7 @@
     vm.showSignupForm = false;
 
     vm.signin = signin;
+    vm.signUp = signUp;
 
     function signin() {
 
@@ -32,17 +33,70 @@
           vm.isSuperAdminRole = role.isSuperAdminRole();
           vm.isConsumerRole = role.isConsumerRole();
 
-          if(vm.isMeterManagementRole) {
-            $state.go('app.complaint')
+          console.log(vm.isAdminRole)
+          console.log(vm.isSuperAdminRole)
+          console.log(vm.isConsumerRole)
+
+          if(vm.isSuperAdminRole) {
+            $state.go('app.admin')
           }
-          else if(vm.isCreatorRole || vm.isSuperAdminRole){
-            $state.go('app.society')
+          else if(vm.isAdminRole){
+            $state.go('app.dashboard')
           }
-          else if(vm.isVisitorAdminRole){
-            $state.go('app.visitor')
+          else if(vm.isConsumerRole){
+            $state.go('app.home')
           }
-          else{
-            $state.go('app.notice')
+        }, function () {
+          if(vm.user=="" && vm.password!="")
+          {
+            toaster.error("Username is required");
+          }
+          else if(vm.password==""&& vm.user!="")
+          {
+            toaster.error("Password is required");
+          }
+          else if(vm.user=="" && vm.password=="")
+          {
+            toaster.error("Username and password are required");
+          }
+          else {
+            toaster.error("Please enter valid credentials");
+          }
+          console.log(vm.user)
+          console.log(vm.password)
+        });
+
+      }
+    }
+
+    function signUp() {
+      if (vm.SignupForm.$invalid) {
+        validationHelperFactory.manageValidationFailed(vm.Form);
+        toaster.error('E-Mail or password may be wrong. Please try again !!');
+        return;
+      }
+      else {
+
+        vm.newUser.passwordHash = vm.newPassword;
+
+        principal.signup(vm.newUser).then(function (user) {
+
+          vm.isAdminRole = role.isAdminRole();
+          vm.isSuperAdminRole = role.isSuperAdminRole();
+          vm.isConsumerRole = role.isConsumerRole();
+
+          console.log(vm.isAdminRole)
+          console.log(vm.isSuperAdminRole)
+          console.log(vm.isConsumerRole)
+
+          if(vm.isSuperAdminRole) {
+            $state.go('app.admin')
+          }
+          else if(vm.isAdminRole){
+            $state.go('app.dashboard')
+          }
+          else if(vm.isConsumerRole){
+            $state.go('app.home')
           }
         }, function () {
           if(vm.user=="" && vm.password!="")

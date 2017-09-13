@@ -22,10 +22,13 @@
       isInRole: isInRole,
 
       signin: signin,
-      signout: signout
+      signout: signout,
+
+      signup:signup
 
     };
     return service;
+
 
     function identity(force) {
       var deferred = $q.defer();
@@ -101,6 +104,14 @@
       }
     }
 
+    function signup(user) {
+
+      $http.post(__env.dataServerUrl + '/user/signup' , user)
+        .then( function (response) {
+          console.log(response);
+        })
+    }
+
     function signin(user, password) {
       console.log(user)
       console.log(password)
@@ -114,7 +125,7 @@
         headers : headers
       }).then(function(response) {
         if(response.status == 200){
-          $localStorage._identity = response.data;
+          $localStorage._identity = response.data.principal;
           console.log($localStorage._identity)
           $localStorage.loggedInTimeStamp = Date.now();
           _identity = response.data.principal.user;

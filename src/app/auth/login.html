@@ -79,58 +79,59 @@
 
       <!-- Signup Form -->
       <form ng-if="vm.showSignupForm" class="margin-top-20"  name="vm.SignupForm" role="SignupForm" id="SignupForm"  ng-submit="">
-        <div class="form-group"  ng-class="{'has-error':vm.SignupForm.username.$dirty && vm.SignupForm.username.$invalid, 'has-success':vm.SignupForm.username.$valid}">
+        <div class="form-group"  ng-class="{'has-error':vm.SignupForm.name.$dirty && vm.SignupForm.name.$invalid, 'has-success':vm.SignupForm.name.$valid}">
           <span class="input-icon">
-          <input type="text" ng-pattern="/^[1-9][0-9]*$/" ng-maxlength="10" ng-minlength="10" class="form-control" name="username" placeholder="Name" ng-model="vm.user.username">
-          <i class="ti-user"></i></span>
-          <span class="error text-small block"
-                ng-if="vm.Form.username.$error.pattern">Invalid Characters</span>
-          <span class="error text-small block" ng-if="vm.Form.username.$error.maxlength && !vm.Form.username.$error.pattern">Mobile Number should be of ten characters only</span>
-          <span class="error text-small block" ng-if="vm.Form.username.$error.minlength && !vm.Form.username.$error.pattern">Mobile Number should be of ten characters</span>
+          <input type="text" placeholder="Enter Name" class="form-control" name="name"
+                 ng-model="vm.newUser.userName"  ng-pattern="/^[a-zA-Z\s]*$/" ng-maxlength="30" required/>
+            <i class="ti-user"></i></span>
+          <span class="error text-small block" ng-if="vm.SignupForm.name.$error.pattern">Invalid characters</span>
+          <span class="error text-small block" ng-if="vm.SignupForm.name.$dirty && vm.SignupForm.name.$error.required">Name is required</span>
         </div>
 
-        <div class="form-group"  ng-class="{'has-error':vm.Form.username.$dirty && vm.Form.username.$invalid, 'has-success':vm.Form.username.$valid}">
+        <div class="form-group"  ng-class="{'has-error':vm.SignupForm.mobile.$dirty && vm.SignupForm.mobile.$invalid, 'has-success':vm.SignupForm.mobile.$valid}">
           <span class="input-icon">
-          <input type="text" ng-pattern="/^[1-9][0-9]*$/" ng-maxlength="10" ng-minlength="10" class="form-control" name="username" placeholder="Mobile" ng-model="vm.user">
+          <input type="text" ng-pattern="/^[1-9][0-9]*$/" ng-maxlength="10" ng-minlength="10" class="form-control" name="mobile" placeholder="Mobile" ng-model="vm.newUser.mobile">
           <i class="ti-mobile"></i></span>
           <span class="error text-small block"
-                ng-if="vm.Form.username.$error.pattern">Invalid Characters</span>
-          <span class="error text-small block" ng-if="vm.Form.username.$error.maxlength && !vm.Form.username.$error.pattern">Mobile Number should be of ten characters only</span>
-          <span class="error text-small block" ng-if="vm.Form.username.$error.minlength && !vm.Form.username.$error.pattern">Mobile Number should be of ten characters</span>
+                ng-if="vm.SignupForm.mobile.$error.pattern">Invalid Characters</span>
+          <span class="error text-small block" ng-if="vm.SignupForm.mobile.$error.maxlength && !vm.SignupForm.mobile.$error.pattern">Mobile Number should be of ten characters only</span>
+          <span class="error text-small block" ng-if="vm.SignupForm.mobile.$error.minlength && !vm.SignupForm.mobile.$error.pattern">Mobile Number should be of ten characters</span>
         </div>
 
-        <div class="form-group"  ng-class="{'has-error':vm.Form.username.$dirty && vm.Form.username.$invalid, 'has-success':vm.Form.username.$valid}">
-          <span class="input-icon">
-          <input type="text" ng-pattern="/^[1-9][0-9]*$/" ng-maxlength="10" ng-minlength="10" class="form-control" name="username" placeholder="E Mail" ng-model="vm.user">
-          <i class="ti-email"></i></span>
+        <div class="form-group"  ng-class="{'has-error':vm.SignupForm.email.$dirty && vm.SignupForm.email.$invalid, 'has-success':vm.SignupForm.email.$valid}">
+
+         <span class="input-icon">
+             <input type="email" placeholder="E-mail" class="form-control"
+                    name="email"
+                    ng-model="vm.newUser.email" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" required>
+            <i class="ti-email"></i></span>
+          <span class="error text-small block" ng-if="vm.SignupForm.email.$dirty && vm.SignupForm.email.$error.required">Email is required.</span>
+          <span class="error text-small block" ng-if="vm.SignupForm.email.$error.email">Please, enter a valid email address.</span>
+        </div>
+
+        <div class="form-group"
+             ng-class="{'has-error':vm.SignupForm.newPassword.$dirty && vm.SignupForm.newPassword.$invalid, 'has-success':vm.SignupForm.newPassword.$valid}">
+           <span class="input-icon">
+          <input type="password" placeholder="Enter a Password" class="form-control" name="newPassword"
+                 ng-model="vm.newPassword" ng-minlength=6 required/>
+             <i class="ti-key"></i></span>
           <span class="error text-small block"
-                ng-if="vm.Form.username.$error.pattern">Invalid Characters</span>
-          <span class="error text-small block" ng-if="vm.Form.username.$error.maxlength && !vm.Form.username.$error.pattern">Mobile Number should be of ten characters only</span>
-          <span class="error text-small block" ng-if="vm.Form.username.$error.minlength && !vm.Form.username.$error.pattern">Mobile Number should be of ten characters</span>
+                ng-if="vm.SignupForm.newPassword.$dirty && vm.SignupForm.newPassword.$error.required">New Password is required</span>
+          <span class="error text-small block" ng-if="vm.SignupForm.newPassword.$error.minlength">New Password should be six characters or more </span>
         </div>
 
-
-        <div class="form-group form-actions">
-
-      <span class="input-icon">
-          <input type="password" class="form-control password" name="password" placeholder="Password"
-                 ng-model="vm.password">
-        <i class="ti-key"></i>
-        </span>
-
-        </div>
-        <div class="form-group form-actions">
-
-      <span class="input-icon">
-          <input type="password" class="form-control password" name="password" placeholder="Confirm Password"
-                 ng-model="vm.password">
-        <i class="ti-key"></i>
-        </span>
-
+        <div class="form-group"
+             ng-class="{'has-error':vm.SignupForm.password2.$dirty && vm.SignupForm.password2.$error.compareTo || vm.SignupForm.password2.$dirty && vm.SignupForm.password2.$invalid, 'has-success':vm.SignupForm.password2.$valid}">
+          <span class="input-icon">
+          <input type="password" placeholder="Repeat Password" class="form-control" name="password2"
+                 ng-model="vm.password2" compare-to="vm.newPassword" required/>
+          <i class="ti-key"></i></span>
+          <span class="error text-small block"
+                ng-if="vm.SignupForm.password2.$dirty && vm.SignupForm.password2.$error.compareTo">Passwords do not match</span>
         </div>
 
         <div class="form-actions">
-          <button type="submit" class="btn btn-success btn-block" ng-click="vm.signin()">
+          <button type="submit" class="btn btn-success btn-block" ng-click="vm.signUp()" ng-disabled="vm.SignupForm.$invalid">
             Sign Up
           </button>
 

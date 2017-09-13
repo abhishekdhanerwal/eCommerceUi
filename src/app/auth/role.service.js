@@ -23,7 +23,7 @@
     function isSuperAdminRole() {
       if($localStorage._identity) {
         var roles = null;
-        // var roles = $localStorage._identity.principal.role;
+         var roles = $localStorage._identity.role;
         var index = _.findIndex(roles, function(o) {
           index = 0 ;
           if (roles.match(/SUPER_ADMIN/g)){
@@ -38,7 +38,7 @@
     function isAdminRole() {
       if($localStorage._identity) {
         var roles = null;
-        // var roles = $localStorage._identity.principal.role;
+         var roles = $localStorage._identity.role;
         var index = _.findIndex(roles, function(o) {
           index = 0 ;
           if (roles.match(/ROLE_ADMIN/g)){
@@ -53,7 +53,7 @@
     function isConsumerRole() {
       if($localStorage._identity) {
         var roles = null;
-        // var roles = $localStorage._identity.principal.role;
+         var roles = $localStorage._identity.role;
         var index = _.findIndex(roles, function(o) {
           index = 0 ;
           if (roles.match(/CONSUMER/g)){
