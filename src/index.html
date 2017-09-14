@@ -52,6 +52,12 @@
     <!-- Packet CSS -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/plugins.css">
+
+
+    <link rel="stylesheet" href="bower_components/angular-spinkit/build/angular-spinkit.min.css">
+    <link rel="stylesheet" href="css/eCommerce.css">
+
+
     <!-- Packet Theme -->
     <link rel="stylesheet" data-ng-href="css/themes/{{ app.layout.theme }}.css" />
     <!-- Favicon -->
@@ -59,6 +65,9 @@
 </head>
 <body ng-controller="AppCtrl">
     <div ui-view id="app" class="lyt-4" ng-class="{'app-mobile' : app.isMobile, 'app-navbar-fixed' : app.layout.isNavbarFixed, 'app-sidebar-fixed' : app.layout.isSidebarFixed, 'app-sidebar-closed':app.layout.isSidebarClosed, 'app-footer-fixed':app.layout.isFooterFixed}"></div>
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1Umuj-nZcqS_FcNYYhYe3CVNL5YkVyw8&libraries=places"></script>
 
     <!-- jQuery -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -135,11 +144,26 @@
     <script src="bower_components/angular-ladda/dist/angular-ladda.min.js"></script>
     <!-- Angular Slick Carousel -->
     <script src="bower_components/angular-slick-carousel/dist/angular-slick.min.js"></script>
+
+
+
+    <script src="bower_components/angular-spinkit/build/angular-spinkit.min.js"></script>
+    <script src="bower_components/ng-table/dist/ng-table.js"></script>
+
+
     <!-- Packet Scripts -->
-    <script src="js/app.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/config.constant.js"></script>
-    <script src="js/config.router.js"></script>
+    <script src="app/core/app.js"></script>
+    <script src="app/core/main.js"></script>
+    <script src="app/core/config.constant.js"></script>
+    <script src="app/core/config.router.js"></script>
+
+    <!-- eCommerce Module -->
+    <script src="app/auth/auth.module.js"></script>
+    <script src="app/core/app.module.js"></script>
+    <script src="app/home/home.module.js"></script>
+    <script src="app/admin/admin.module.js"></script>
+    <script src="app/adminUi/adminUi.module.js"></script>
+
     <!-- Packet Directives -->
     <script src="js/directives/toggle.js"></script>
     <script src="js/directives/perfect-scrollbar.js"></script>
@@ -162,5 +186,28 @@
     <script src="js/controllers/mainCtrl.js"></script>
     <script src="js/controllers/inboxCtrl.js"></script>
     <script src="js/controllers/bootstrapCtrl.js"></script>
+
+    <!-- eCommerce Controller -->
+    <script src="app/auth/signin.controller.js"></script>
+    <script src="app/auth/signout.controller.js"></script>
+    <script src="app/auth/forgot.controller.js"></script>
+    <script src="app/home/home.controller.js"></script>
+    <script src="app/admin/adminList.controller.js"></script>
+    <script src="app/admin/adminNew.controller.js"></script>
+    <script src="app/admin/adminEdit.controller.js"></script>
+    <script src="app/adminUi/banner.controller.js"></script>
+    <script src="app/adminUi/sms.controller.js"></script>
+
+    <!-- eCommerce Service -->
+    <script src="app/auth/principal.service.js"></script>
+    <script src="app/auth/authorization.service.js"></script>
+    <script src="app/auth/role.service.js"></script>
+    <script src="app/auth/facebook_login.service.js"></script>
+    <script src="app/core/validationHelperFactory.js"></script>
+    <script src="app/auth/forgot.service.js"></script>
+    <script src="app/home/home.service.js"></script>
+    <script src="app/admin/admin.service.js"></script>
+    <script src="app/adminUi/adminUi.service.js"></script>
+
 </body>
 </html>

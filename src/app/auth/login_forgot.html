@@ -1,0 +1,49 @@
+<toaster-container toaster-options="{'position-class': 'toast-bottom-right', 'close-button':true}"></toaster-container>
+<!-- start: FORGOT -->
+<!---->
+
+<div class="row">
+  <div
+    class="main-login col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4 col-lg-2 col-lg-offset-5">
+
+    <p class="text-center text-dark text-bold text-extra-large margin-top-15">
+      Forgot Password
+    </p>
+    <p class="text-center">
+      Enter your phone number and we will send you a link to reset your password.
+    </p>
+    <!-- start: FORGOT BOX -->
+    <div class="box-forgot">
+      <ng-form name="vm.Form" role="Form" id="Form" novalidate>
+        <div class="form-group" ng-class="{'has-error':vm.Form.phoneNo.$dirty && vm.Form.phoneNo.$invalid,
+                 'has-success':vm.Form.phoneNo.$valid}">
+          <input type="phoneNo" placeholder="Phone No" ng-minlength="10" ng-maxlength="10" class="form-control" name="phoneNo" ng-model="vm.phoneNo" required>
+          <span class="error text-small block" ng-if="vm.Form.phoneNo.$dirty && vm.Form.phoneNo.$error.required">
+                        Phone number is required</span>
+          <span class="error text-small block"
+                ng-if="vm.Form.phoneNo.$error.pattern">Invalid Characters</span>
+          <span class="error text-small block" ng-if="vm.Form.phoneNo.$error.minlength">Mobile Number should be ten characters only</span>
+          <span class="error text-small block" ng-if="vm.Form.phoneNo.$error.maxlength">Mobile Number should be ten characters only</span>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-success btn-block" ng-click="vm.submit()">
+              Submit
+            </button>
+          </div>
+      </ng-form>
+    </div>
+
+
+    <div class="text-center margin-top-15">
+      <strong>Oh!!</strong> I remember my password <br>
+      <a ui-sref="auth.signin">Go Back</a>
+    </div>
+    <!-- start: COPYRIGHT -->
+    <div class="copyright">
+      {{app.year}} &copy; {{ app.name }} by {{ app.author }}.
+    </div>
+    <!-- end: COPYRIGHT -->
+  </div>
+  <!-- end: FORGOT BOX -->
+</div>
+</div>
+<!-- end: FORGOT -->

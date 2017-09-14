@@ -1,0 +1,108 @@
+<!-- start: BREADCRUMB -->
+<div class="breadcrumb-wrapper">
+  <h4 class="mainTitle no-margin"> Notification </h4>
+
+</div>
+<!-- end: BREADCRUMB -->
+
+<wave-spinner ng-show="vm.progress" ></wave-spinner>
+
+<div ng-show="!vm.progress" class="container-fluid container-fullw">
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-white">
+        <div class="panel-body">
+
+          <fieldset>
+
+            <ng-form name="vm.Form" role="Form" id="Form" novalidate>
+
+              <div class="row">
+                <div class="col-md-6">
+
+                  <div class="form-group"
+                       ng-class="{'has-error':vm.Form.audience.$dirty && vm.Form.audience.$invalid, 'has-success':vm.Form.audience.$valid}">
+                    <label class="block">
+                      Choose <span class="symbol required"></span>
+                    </label>
+                    <div class="clip-radio radio-primary">
+                      <input type="radio" id="all" name="audience" value="All" ng-model="vm.audience"
+                             required>
+                      <label for="all">
+                        SMS
+                      </label>
+                      <input type="radio" id="choose" name="audience" value="Choose" ng-click="vm.openUserList()" ng-model="vm.audience"
+                             required>
+                      <label for="choose">
+                        E - Mail
+                      </label>
+                    </div>
+                  </div>
+
+
+                  <div class="form-group"
+                       ng-class="{'has-error':vm.Form.noticetype.$dirty && vm.Form.noticetype.$invalid, 'has-success':vm.Form.noticetype.$valid}">
+                    <label class="control-label"> Area <span class="symbol required"></span> </label>
+                    <select class="form-control" name="noticetype" ng-model="vm.notice.type" required>
+                      <option value=""></option>
+                      <option value="Festival">Festival</option>
+                      <option value="Violation">Violation</option>
+                      <option value="Announcement">Announcement</option>
+                      <option value="Other">Other</option>
+                    </select>
+                    <!--<span class="error text-small block"-->
+                    <!--ng-if="vm.Form.noticeType.$dirty && vm.Form.noticeType.$error.required">Notice Type is required.</span>-->
+                  </div>
+
+                  <div class="form-group"
+                       ng-class="{'has-error':vm.Form.subject.$dirty && vm.Form.subject.$invalid, 'has-success':vm.Form.subject.$valid}">
+                    <label class="control-label"> Subject <span class="symbol required"></span></label>
+                    <input type="text" placeholder="Subject" class="form-control" name="subject"
+                           ng-model="vm.notice.subject" ng-minlength=2 ng-maxlength=20 required/>
+                    <!--<span class="error text-small block"-->
+                    <!--ng-if="vm.Form.address.$dirty && vm.Form.address.$error.required && vm.user.role == 'ROLE_CONSUMER'">Address is required</span>-->
+                    <span class="error text-small block"
+                          ng-show="vm.Form.subject.$invalid && vm.Form.subject.$error.minlength">Subject should be two characters or more</span>
+                    <span class="error text-small block"
+                          ng-show="vm.Form.subject.$invalid && vm.Form.subject.$error.maxlength">Subject should be less than 20 characters</span>
+                  </div>
+
+                  <div class="form-group"
+                       ng-class="{'has-error':vm.Form.description.$dirty && vm.Form.description.$invalid, 'has-success':vm.Form.description.$valid}">
+                    <label class="control-label">Description<span class="symbol required"></span></label>
+                    <textarea class="form-control custom-control" rows="3" name="description" style="resize:none" ng-model="vm.notice.description"
+                              ng-minlength=5 ng-maxlength=500 required></textarea>
+                  </div>
+
+                </div>
+
+
+
+              </div>
+
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div>
+                    <button type="submit" ng-disabled="vm.disableButton" class="btn btn-wide btn-success"
+                            ng-click="vm.submit()">
+                      Send
+                    </button>
+                    <button type="reset" ng-disabled="vm.disableButton" class="btn btn-wide btn-warning"
+                            ng-click="vm.reset()">
+                      Reset
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+
+            </ng-form>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

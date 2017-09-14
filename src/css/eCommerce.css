@@ -1,0 +1,27 @@
+.double-bounce1 {
+  background-color: red;
+}
+.double-bounce2 {
+  background-color: lightcoral;
+}
+
+.sweet-alert button.cancel {
+  background-color: #B22222; }
+.sweet-alert button.cancel:hover {
+  background-color: #B22222; }
+.sweet-alert button.cancel:active {
+  background-color: #B22222; }
+
+/*.container {*/
+  /*margin: 0 auto;*/
+  /*padding: 40px;*/
+  /*width: 80%;*/
+  /*color: #333;*/
+  /*background: #419be0;*/
+/*}*/
+
+/*.slick-slide {*/
+  /*text-align: center;*/
+  /*color: #419be0;*/
+  /*background: white;*/
+/*}*/

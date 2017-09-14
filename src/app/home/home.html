@@ -1,0 +1,134 @@
+<!--<div class="breadcrumb-wrapper">-->
+  <!--<h4 class="mainTitle no-margin">Neighbours</h4>-->
+
+  <!--<div ng-click="vm.breadcrumbRoute()" ncy-breadcrumb class="pull-right"></div>-->
+<!--</div>-->
+
+<wave-spinner ng-show="vm.progress" ></wave-spinner>
+
+<div ng-show="!vm.progress" class="container-fluid container-fullw">
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-white">
+        <div class="panel-body">
+
+          <div class="single-item">
+            <div style="height: 350px"><img src="../../images/carousel/carousel001.jpg"></div>
+            <div style="height: 350px"><img src="../../images/carousel/carousel002.jpg"></div>
+            <!--<div><img src="../../images/carousel/03.jpg"></div>-->
+            <!--<div><img src="../../images/carousel/04.jpg"></div>-->
+            <!--<div><img src="../../images/carousel/05.jpg"></div>-->
+            <!--<div><img src="../../images/carousel/06.jpg"></div>-->
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-white">
+
+        <div class="panel-heading">
+
+          <div class="partition-light-grey padding-15 text-center margin-bottom-25">
+            <h4 class="no-margin text-red text-bold"> Hot Picks </h4>
+            <span class="text-light">redefined for you</span>
+          </div>
+
+            <!--<h3 class="inline-block text-red text-bold"> Hot Picks </h3>-->
+
+        </div>
+
+        <div class="panel-body">
+
+          <div class="col-md-4 thumbnail text-center">
+            <a href="single.html"><img class="margin-top-10 img-rounded img-responsive" width="90%" src="../../images/portfolio/image01_th.jpg" alt="" /></a>
+
+            <a class="product_name" href="single.html">Sed ut perspiciatis</a>
+            <p><a class="item_add" href="#"><i></i> <span class="item_price">$329</span></a></p>
+            <uib-rating ng-model="rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" ng-class="red" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
+            <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
+          </div>
+          <div class="col-md-4 thumbnail text-center">
+            <a href="single.html"><img class="margin-top-10 img-rounded img-responsive" width="90%" src="../../images/portfolio/image02_th.jpg" alt="" /></a>
+
+            <a class="product_name" href="single.html">great explorer</a>
+            <p><a class="item_add" href="#"><i></i> <span class="item_price">$599.8</span></a></p>
+            <uib-rating ng-model="rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
+            <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
+          </div>
+          <div class="col-md-4 thumbnail text-center">
+            <a href="single.html"><img class="margin-top-10 img-rounded img-responsive" width="90%" src="../../images/portfolio/image03_th.jpg" alt="" /></a>
+
+            <a class="product_name" href="single.html">similique sunt</a>
+            <p><a class="item_add" href="#"><i></i> <span class="item_price">$359.6</span></a></p>
+            <uib-rating ng-model="rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
+            <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
+          </div>
+          <div class="col-md-4 thumbnail text-center">
+            <a href="single.html"><img class="margin-top-10 img-rounded img-responsive" width="90%" src="../../images/portfolio/image01_th.jpg" alt="" /></a>
+
+            <a class="product_name" href="single.html">shrinking </a>
+            <p><a class="item_add" href="#"><i></i> <span class="item_price">$649.99</span></a></p>
+            <uib-rating ng-model="rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
+            <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
+          </div>
+          <div class="col-md-4 thumbnail text-center">
+            <a href="single.html"><img class="margin-top-10 img-rounded img-responsive" width="90%" src="../../images/portfolio/image02_th.jpg" alt="" /></a>
+
+            <a class="product_name" href="single.html">perfectly simple</a>
+            <p><a class="item_add" href="#"><i></i> <span class="item_price">$750</span></a></p>
+            <uib-rating ng-model="rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
+            <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
+          </div>
+          <div class="col-md-4 thumbnail text-center">
+            <a href="single.html"><img class="margin-top-10 img-rounded img-responsive" width="90%" src="../../images/portfolio/image03_th.jpg" alt="" /></a>
+
+            <a class="product_name" href="single.html">equal blame</a>
+            <p><a class="item_add" href="#"><i></i> <span class="item_price">$295.59</span></a></p>
+            <uib-rating ng-model="rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
+            <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-white">
+        <div class="panel-body">
+
+          <div class="slider slider-nav">
+            <div><img src="../../images/avatar-1.jpg"></div>
+            <div><img src="../../images/avatar-2.jpg"></div>
+            <div><img src="../../images/avatar-3.jpg"></div>
+            <div><img src="../../images/avatar-4.jpg"></div>
+            <div><img src="../../images/avatar-5.jpg"></div>
+            <div><img src="../../images/avatar-6.jpg"></div>
+            <div><img src="../../images/avatar-7.jpg"></div>
+            <div><img src="../../images/avatar-8.jpg"></div>
+          </div>
+
+          <!--<div data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>-->
+            <!--<div><img src="../../images/avatar-1.jpg"></div>-->
+            <!--<div><img src="../../images/avatar-2.jpg"></div>-->
+            <!--<div><img src="../../images/avatar-3.jpg"></div>-->
+            <!--<div><img src="../../images/avatar-4.jpg"></div>-->
+            <!--<div><img src="../../images/avatar-5.jpg"></div>-->
+            <!--<div><img src="../../images/avatar-6.jpg"></div>-->
+            <!--<div><img src="../../images/avatar-7.jpg"></div>-->
+            <!--<div><img src="../../images/avatar-8.jpg"></div>-->
+          <!--</div>-->
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

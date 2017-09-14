@@ -1,0 +1,165 @@
+<toaster-container toaster-options="{'position-class': 'toast-bottom-right', 'close-button':true}"></toaster-container>
+
+<div class="row">
+
+  <div class="col col-lg-4 col-md-4 col-sm-4 hidden-xs">
+  <img src="../../images/lifePlayTrip/login_one.png">
+</div>
+
+
+<!-- start: LOGIN -->
+<div class="col col-lg-8">
+  <div
+    class="main-login col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-5 col-md-offset-6 col-lg-4 col-lg-offset-6">
+    <!--<div class="logo text-center">-->
+      <!--<img src="/images/logo-big.png" alt="{{app.name}}" class="img-responsive"/>-->
+    <!--</div>-->
+    <!--<p class="text-center text-dark text-bold text-extra-large margin-top-15">-->
+      <!--Welcome to Datiot-->
+    <!--</p>-->
+    <br><p class="text-center">
+      <!--Please enter your Username and password to log in.-->
+    </p>
+
+    <double-bounce-spinner ng-show="vm.progress" ></double-bounce-spinner>
+
+
+    <!-- start: LOGIN BOX -->
+    <div ng-if="!vm.progress" class="box-login">
+
+
+      <!--<div class="row">-->
+
+        <!--<button type="button" class="margin-top-10 btn btn-info btn-wide btn-block btn-scroll btn-scroll-left fa fa-facebook" ng-click="openAside('right')">-->
+          <!--<span>Login By Facebook</span>-->
+        <!--</button>-->
+
+      <!--</div>-->
+
+      <!-- Login Form -->
+      <form ng-if="vm.showLoginForm" class="margin-top-20"  name="vm.Form" role="Form" id="Form"  ng-submit="">
+        <div class="form-group"  ng-class="{'has-error':vm.Form.username.$dirty && vm.Form.username.$invalid, 'has-success':vm.Form.username.$valid}">
+          <span class="input-icon">
+          <input type="text" ng-pattern="/^[1-9][0-9]*$/" ng-maxlength="10" ng-minlength="10" class="form-control" name="username" placeholder="Mobile" ng-model="vm.user">
+          <i class="ti-user"></i></span>
+          <span class="error text-small block"
+                ng-if="vm.Form.username.$error.pattern">Invalid Characters</span>
+          <span class="error text-small block" ng-if="vm.Form.username.$error.maxlength && !vm.Form.username.$error.pattern">Mobile Number should be of ten characters only</span>
+          <span class="error text-small block" ng-if="vm.Form.username.$error.minlength && !vm.Form.username.$error.pattern">Mobile Number should be of ten characters</span>
+        </div>
+        <div class="form-group form-actions">
+
+      <span class="input-icon">
+          <input type="password" class="form-control password" name="password" placeholder="Password"
+                 ng-model="vm.password">
+        <i class="ti-key"></i>
+        </span>
+
+        </div>
+        <div class="text-center">
+          <a ui-sref="auth.forgot"> Forgot Password </a>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-success btn-block" ng-click="vm.signin()">
+            Login
+          </button>
+
+          <!--<div class="checkbox clip-check check-primary">-->
+            <!--<input type="checkbox" id="remember" value="1" ng-model="vm.rememberMe">-->
+            <!--<label for="remember"> Keep me signed in </label>-->
+          <!--</div>-->
+        </div>
+      </form>
+
+      <!-- Signup Form -->
+      <form ng-if="vm.showSignupForm" class="margin-top-20"  name="vm.SignupForm" role="SignupForm" id="SignupForm"  ng-submit="">
+        <div class="form-group"  ng-class="{'has-error':vm.Form.username.$dirty && vm.Form.username.$invalid, 'has-success':vm.Form.username.$valid}">
+          <span class="input-icon">
+          <input type="text" ng-pattern="/^[1-9][0-9]*$/" ng-maxlength="10" ng-minlength="10" class="form-control" name="username" placeholder="Name" ng-model="vm.user">
+          <i class="ti-user"></i></span>
+          <span class="error text-small block"
+                ng-if="vm.Form.username.$error.pattern">Invalid Characters</span>
+          <span class="error text-small block" ng-if="vm.Form.username.$error.maxlength && !vm.Form.username.$error.pattern">Mobile Number should be of ten characters only</span>
+          <span class="error text-small block" ng-if="vm.Form.username.$error.minlength && !vm.Form.username.$error.pattern">Mobile Number should be of ten characters</span>
+        </div>
+
+        <div class="form-group"  ng-class="{'has-error':vm.Form.username.$dirty && vm.Form.username.$invalid, 'has-success':vm.Form.username.$valid}">
+          <span class="input-icon">
+          <input type="text" ng-pattern="/^[1-9][0-9]*$/" ng-maxlength="10" ng-minlength="10" class="form-control" name="username" placeholder="Mobile" ng-model="vm.user">
+          <i class="ti-mobile"></i></span>
+          <span class="error text-small block"
+                ng-if="vm.Form.username.$error.pattern">Invalid Characters</span>
+          <span class="error text-small block" ng-if="vm.Form.username.$error.maxlength && !vm.Form.username.$error.pattern">Mobile Number should be of ten characters only</span>
+          <span class="error text-small block" ng-if="vm.Form.username.$error.minlength && !vm.Form.username.$error.pattern">Mobile Number should be of ten characters</span>
+        </div>
+
+        <div class="form-group"  ng-class="{'has-error':vm.Form.username.$dirty && vm.Form.username.$invalid, 'has-success':vm.Form.username.$valid}">
+          <span class="input-icon">
+          <input type="text" ng-pattern="/^[1-9][0-9]*$/" ng-maxlength="10" ng-minlength="10" class="form-control" name="username" placeholder="E Mail" ng-model="vm.user">
+          <i class="ti-email"></i></span>
+          <span class="error text-small block"
+                ng-if="vm.Form.username.$error.pattern">Invalid Characters</span>
+          <span class="error text-small block" ng-if="vm.Form.username.$error.maxlength && !vm.Form.username.$error.pattern">Mobile Number should be of ten characters only</span>
+          <span class="error text-small block" ng-if="vm.Form.username.$error.minlength && !vm.Form.username.$error.pattern">Mobile Number should be of ten characters</span>
+        </div>
+
+
+        <div class="form-group form-actions">
+
+      <span class="input-icon">
+          <input type="password" class="form-control password" name="password" placeholder="Password"
+                 ng-model="vm.password">
+        <i class="ti-key"></i>
+        </span>
+
+        </div>
+        <div class="form-group form-actions">
+
+      <span class="input-icon">
+          <input type="password" class="form-control password" name="password" placeholder="Confirm Password"
+                 ng-model="vm.password">
+        <i class="ti-key"></i>
+        </span>
+
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-success btn-block" ng-click="vm.signin()">
+            Sign Up
+          </button>
+
+          <!--<div class="checkbox clip-check check-primary">-->
+          <!--<input type="checkbox" id="remember" value="1" ng-model="vm.rememberMe">-->
+          <!--<label for="remember"> Keep me signed in </label>-->
+          <!--</div>-->
+        </div>
+      </form>
+
+      <div class="row margin-top-15">
+
+        <button type="button" class="col-lg-6 col-md-6 col-sm-6 col-xs-6 margin-left-10 btn btn-info btn-wide btn-scroll btn-scroll-left fa fa-facebook" ng-click="openAside('right') ; vm.fbLogin()">
+          <span>Facebook Login</span>
+        </button>
+
+        <button ng-if="vm.showSignupForm" type="button" class="col-lg-5 col-md-5 col-sm-5 col-xs-5 margin-right-15 pull-right btn btn-primary btn-wide btn-scroll btn-scroll-top ti-shopping-cart" ng-click="openAside('right'); vm.callLogin()">
+          <span>Log In</span>
+        </button>
+
+        <button ng-if="vm.showLoginForm" type="button" class="col-lg-5 col-md-5 col-sm-5 col-xs-5 margin-right-15 pull-right btn btn-primary btn-wide btn-scroll btn-scroll-top ti-pencil" ng-click="openAside('right'); vm.callSignup()">
+          <span>Sign Up</span>
+        </button>
+
+        <div id="status"></div>
+
+      </div>
+      <!-- start: COPYRIGHT -->
+      <div class="copyright">
+        {{app.year}} &copy; {{ app.name }} by {{ app.author }}.
+      </div>
+      <!-- end: COPYRIGHT -->
+    </div>
+    <!-- end: LOGIN BOX -->
+  </div>
+</div>
+  </div>
+<!-- end: LOGIN -->
