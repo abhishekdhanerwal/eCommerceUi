@@ -25,7 +25,7 @@ function ($stateProvider, $urlRouterProvider, $controllerProvider, $compileProvi
     // APPLICATION ROUTES
     // -----------------------------------
     // For any unmatched url, redirect to /app/dashboard
-    $urlRouterProvider.otherwise("/auth/signin");
+    $urlRouterProvider.otherwise("/app/home");
     //
     // Set up the states
     $stateProvider.state('app', {
@@ -42,6 +42,16 @@ function ($stateProvider, $urlRouterProvider, $controllerProvider, $compileProvi
       title: 'Home',
       ncyBreadcrumb: {
         label: 'Home'
+      }
+    }).state('app.product', {
+      url: "/product",
+      templateUrl: "app/product/product.html",
+      resolve: loadSequence('d3', 'ui.knob', 'countTo', 'dashboardCtrl'),
+      controller: 'ProductCtrl',
+      controllerAs: 'vm',
+      title: 'Product',
+      ncyBreadcrumb: {
+        label: 'Product'
       }
     }).state('app.admin', {
       url: "/admin",
@@ -536,15 +546,15 @@ function ($stateProvider, $urlRouterProvider, $controllerProvider, $compileProvi
         url: '/auth',
         template: '<div ui-view class="fade-in-right-big smooth"></div>',
         abstract: true
-      }).state('auth.signin', {
-        url: '/signin',
+      }).state('app.signin', {
+        url: '/signin/:id',
         templateUrl: 'app/auth/login.html',
         controller: 'SigninController',
         controllerAs: 'vm'
-    }).state('auth.signout',{
+    }).state('app.signout',{
       controller: 'SignoutController',
       controllerAs: 'vm'
-    }).state('auth.forgot', {
+    }).state('app.forgot', {
       url: '/forgot',
       templateUrl: "app/auth/login_forgot.html",
       controller: 'ForgotController',

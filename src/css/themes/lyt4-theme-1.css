@@ -242,27 +242,27 @@ body {
 }
 
 .horizontal-menu {
-  background: #E1E6F4;
-  box-shadow: 0 0 4px rgba(21, 31, 57, 0.4);
+  background: #f9d78e;
+  box-shadow: 0 0 4px rgb(249, 215, 142);
 }
 .horizontal-menu .navbar-nav > li > a {
   background: none !important;
   color: #777 !important;
 }
 .horizontal-menu .navbar-nav > li > a:hover {
-  background: #ced6ed !important;
+  background: #FFA500 !important;
   color: #2C2F3B !important;
 }
 .horizontal-menu .navbar-nav > li.open > a {
-  color: #2C2F3B !important;
-  background: #ced6ed !important;
+  color: #ffffff !important;
+  background: #FFA500 !important;
 }
 .horizontal-menu .navbar-nav > li.open > a:hover {
   color: #2C2F3B !important;
 }
 .horizontal-menu .navbar-nav > li.active > a {
   color: #ffffff !important;
-  background: #bcc7e6 !important;
+  background: #FFA500 !important;
 }
 .horizontal-menu .navbar-nav > li.active > a:hover {
   color: #ffffff !important;

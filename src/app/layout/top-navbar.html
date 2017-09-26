@@ -8,7 +8,7 @@
         <button href="javascript:void(0)" class="sidebar-mobile-toggler btn no-radius pull-left hidden-md hidden-lg" id="sidebar-toggler" ng-click="toggle('sidebar')" v-pressable>
             <i class="fa fa-bars"></i>
         </button>
-        <a class="navbar-brand" ui-sref="app.dashboard"> <img ng-src="{{app.layout.logo}}" alt="{{app.name}}" /> </a>
+        <a class="navbar-brand" ui-sref="app.home"> <img ng-src="{{app.layout.logo}}" alt="{{app.name}}" /> </a>
         <a class="navbar-brand navbar-brand-collapsed" ui-sref="app.dashboard"> <img ng-src="{{app.layout.logoCollapsed}}" alt="" /> </a>
         <button class="btn pull-right menu-toggler visible-xs-block" id="menu-toggler" ng-click="navbarCollapsed = !navbarCollapsed" v-pressable>
             <i ng-class="navbarCollapsed ? 'fa fa-folder' : 'fa fa-folder-open'"></i> <small><i class="fa fa-caret-down margin-left-5"></i></small>
@@ -80,8 +80,20 @@
             <!--</li>-->
             <!-- end: MESSAGES DROPDOWN -->
 
-          <li ng-controller="SignoutController as vm" class="dropdown" uib-dropdown on-toggle="toggled(open)">
-            <a ng-click="vm.signout()" class="dropdown-toggle" uib-dropdown-toggle><i class="fa fa-power-off"></i></a>
+          <!--<li>-->
+            <!--<a>For Cashback and latest offers -> </a>-->
+          <!--</li>-->
+
+          <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
+            <a ui-sref="app.signin({id:'user'})"><button type="button" class="btn btn-wide btn-o btn-warning">
+              Sign In
+            </button></a>
+          </li>
+
+          <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
+            <a ui-sref="app.signin({id:'newUser'})"><button type="button" class="btn btn-wide btn-o btn-warning">
+              Sign Up
+            </button></a>
           </li>
 
 
@@ -107,14 +119,14 @@
             <!--</li>-->
             <!-- end: ACTIVITIES DROPDOWN -->
             <!-- start: LANGUAGE SWITCHER -->
-            <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
-                <a href class="dropdown-toggle" uib-dropdown-toggle> <i class="flag-icon" ng-class="'flag-icon-in'| translate"></i><span>&nbsp;{{language.selected}}</span> </a>
-                <!--<ul role="menu" class="dropdown-menu dropdown-light animated fadeInUpShort ">-->
-                    <!--<li ng-repeat="(localeId, langName) in language.available">-->
-                        <!--<a ng-click="language.set(localeId, $event)" href="javascript:void(0)" class="menu-toggler"> {{langName}} </a>-->
-                    <!--</li>-->
-                <!--</ul>-->
-            </li>
+            <!--<li class="dropdown" uib-dropdown on-toggle="toggled(open)">-->
+                <!--<a href class="dropdown-toggle" uib-dropdown-toggle> <i class="flag-icon" ng-class="'flag-icon-in'| translate"></i><span>&nbsp;{{language.selected}}</span> </a>-->
+                <!--&lt;!&ndash;<ul role="menu" class="dropdown-menu dropdown-light animated fadeInUpShort ">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<li ng-repeat="(localeId, langName) in language.available">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<a ng-click="language.set(localeId, $event)" href="javascript:void(0)" class="menu-toggler"> {{langName}} </a>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+            <!--</li>-->
             <!-- end: LANGUAGE SWITCHER -->
         </ul>
         <!-- start: MENU TOGGLER FOR MOBILE DEVICES -->

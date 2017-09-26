@@ -10,8 +10,15 @@
   function SigninController($scope, $state,  toaster, $localStorage, $timeout , principal , role , validationHelperFactory ) {
     var vm = this;
     vm.progress = false;
-    vm.showLoginForm = true;
-    vm.showSignupForm = false;
+
+    if($state.params.id == 'user'){
+      vm.showLoginForm = true;
+      vm.showSignupForm = false;
+    }
+    else {
+      vm.showLoginForm = false;
+      vm.showSignupForm = true;
+    }
 
     vm.signin = signin;
     vm.signUp = signUp;
@@ -78,6 +85,7 @@
       else {
 
         vm.newUser.passwordHash = vm.newPassword;
+        vm.newUser.role = 'USER';
 
         principal.signup(vm.newUser).then(function (user) {
 
@@ -236,7 +244,6 @@
 
     }
 
-
     activate();
 
     function activate() {
@@ -269,10 +276,12 @@
 
       };
 
-      $timeout(function () {
-        toaster.info("User is not logged in");
-      }, 1000);
+      // $timeout(function () {
+      //   toaster.info("User is not logged in");
+      // }, 1000);
 
     }
+
+
   }
 })();

@@ -2,26 +2,13 @@
   'use strict';
 
   angular
-    .module('app.home')
-    .factory('homeFactory', homeFactory);
+    .module('app.product')
+    .factory('productFactory', productFactory);
 
-  homeFactory.$inject = ['$http'];
+  productFactory.$inject = ['$http'];
 
-  function homeFactory($http) {
+  function productFactory($http) {
     var service = {};
-
-    service.changeXMLtoJSON = function () {
-
-        var promise = $http.get(__env.dataServerUrl + '/user/run')
-          .then(
-            function (response) {
-              return response;
-            },
-            function (response) {
-              return response;
-            });
-        return promise;
-    }
 
     // service.newNotice = function (data) {
     //   var promise = $http.post(__env.dataServerUrl + '/createNotice', data)

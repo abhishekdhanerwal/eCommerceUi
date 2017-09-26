@@ -1,0 +1,93 @@
+<wave-spinner ng-show="vm.progress" ></wave-spinner>
+
+
+<div ng-show="!vm.progress" class="container-fluid container-fullw">
+
+    <div class="row">
+
+      <div class="col-md-2">
+
+        <div class="panel panel-white">
+
+          <div class="panel-heading">
+            <span class="input-icon">
+          <input type="text" placeholder="Filter brands" class="form-control" name="name"
+                 ng-model="vm.filter" ng-maxlength="30" required/>
+            <i class="ti-search"></i></span>
+          </div>
+
+          <div class="panel-body">
+
+            <div class="col-md-12 checkbox clip-check check-primary checkbox-inline">
+              <input type="checkbox" id="checkbox10" value="1" checked="">
+              <label for="checkbox10">
+                Adidas
+              </label>
+            </div>
+            <div class="col-md-12 checkbox clip-check check-success checkbox-inline">
+              <input type="checkbox" id="checkbox11" value="1" checked="">
+              <label for="checkbox11">
+                Nike
+              </label>
+            </div>
+            <div class="col-md-12 checkbox clip-check check-warning checkbox-inline">
+              <input type="checkbox" id="checkbox12" value="1" checked="">
+              <label for="checkbox12">
+                Bata
+              </label>
+            </div>
+            <div class="col-md-12 checkbox clip-check check-danger checkbox-inline">
+              <input type="checkbox" id="checkbox13" value="1" checked="">
+              <label for="checkbox13">
+                Reebok
+              </label>
+            </div>
+            <div class="col-md-12 checkbox clip-check check-info checkbox-inline">
+              <input type="checkbox" id="checkbox14" value="1" checked="">
+              <label for="checkbox14">
+                LV
+              </label>
+            </div>
+            <div class="col-md-12 checkbox clip-check check-purple checkbox-inline">
+              <input type="checkbox" id="checkbox15" value="1" checked="">
+              <label for="checkbox15">
+                Zara
+              </label>
+            </div>
+
+          </div>
+        </div>
+
+          <div class="panel panel-white">
+            <div class="panel-heading">
+              <div class="panel-title">
+                Filter by price - 10$ - 20$
+              </div>
+            </div>
+            <div class="panel-body">
+
+              <div class="height-300 margin-left-50 inline-block">
+                <input ng-model="value13" type="text" id="mySlider13" slider options="options13" />
+              </div>
+
+
+              <!--<p class="margin-bottom-30">-->
+                <!--10$ 20$-->
+              <!--</p>-->
+              <!--<input ng-model="value10" type="text" id="mySlider10" slider options="options10" />-->
+              <!--<p class="margin-bottom-30">-->
+                <!--Current value is: {{value11}}{{options11.dimension}}-->
+              <!--</p>-->
+              <!--<input ng-model="value11" type="text" id="mySlider11" slider options="options11" />-->
+              <!--<p class="margin-bottom-30">-->
+                <!--Current value is: {{value12}}{{options12.dimension}}-->
+              <!--</p>-->
+              <!--<input ng-model="value12" type="text" id="mySlider12" slider options="options12" />-->
+            </div>
+          </div>
+
+      </div>
+
+    </div>
+
+</div>

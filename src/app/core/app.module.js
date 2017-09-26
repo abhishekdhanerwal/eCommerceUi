@@ -2,8 +2,10 @@
     'use strict';
 
     angular.module('app.core', [
+        'app.nav',
         'app.home',
         'app.admin',
-        'app.adminUi'
+        'app.adminUi',
+        'app.product'
     ]);
 })();

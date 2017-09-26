@@ -6,14 +6,19 @@
     .module('app.home')
     .controller('HomeCtrl', HomeCtrl);
 
-  HomeCtrl.$inject = ['$state', '$scope' , '$timeout'];
+  HomeCtrl.$inject = ['$state', '$scope' , '$timeout', 'homeFactory'];
   /* @ngInject */
-  function HomeCtrl($state , $scope , $timeout) {
+  function HomeCtrl($state , $scope , $timeout, homeFactory) {
     var vm = this;
 
     activate();
 
     function activate() {
+
+      homeFactory.changeXMLtoJSON().then(function (response) {
+        console.log(response)
+      });
+
       $(".single-item").slick({
         dots: false,
         infinite: true,
