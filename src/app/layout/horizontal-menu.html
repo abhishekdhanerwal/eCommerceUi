@@ -95,7 +95,7 @@
                   <li>
                     <ul>
                         <li ui-sref-active="active" class="col-md-3"  ng-repeat="item in vm.navigationBarMen track by $index">
-                          <a ui-sref="app.table.basic"> <span><strong>{{item.name}}</strong></span> </a>
+                          <a ng-click="vm.findProductList(item)"> <span><strong>{{item.name}}</strong></span> </a>
                         </li>
                     </ul>
                   </li>

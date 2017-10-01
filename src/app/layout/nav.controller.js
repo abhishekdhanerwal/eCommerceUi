@@ -5,12 +5,26 @@
     .module('app.nav')
     .controller('NavController', NavController);
 
-  NavController.$inject = ['$q', 'toaster', '$localStorage', 'role'];
+  NavController.$inject = ['$q', 'toaster', '$localStorage', 'role' , 'navFactory' , '$scope'];
   /* @ngInject */
-  function NavController($q, toaster, $localStorage, role) {
+  function NavController($q, toaster, $localStorage, role , navFactory , $scope) {
     var vm = this;
 
     activate();
+
+    $scope.status = {
+      isopen: false
+    };
+
+    $scope.toggled = function(open) {
+      $log.log('Dropdown is now: ', open);
+    };
+
+    $scope.toggleDropdown = function($event) {
+      $event.preventDefault();
+      $event.stopPropagation();
+      $scope.status.isopen = !$scope.status.isopen;
+    };
 
     function activate() {
       vm.isAdminRole = role.isAdminRole();
@@ -22,61 +36,80 @@
       vm.navigationBarMen = [
         {
           "name":"T-shirts & Polos",
-          "amazonNodeId":"1968120031"
+          "amazonNodeId":"1968120031",
+          "amazonSearchIndex":"Apparel"
         },{
           "name":"Shirts",
-          "amazonNodeId":"1968093031"
+          "amazonNodeId":"1968093031",
+          "amazonSearchIndex":"Apparel"
         },{
           "name":"Jeans",
-          "amazonNodeId":"1968076031"
+          "amazonNodeId":"1968076031",
+          "amazonSearchIndex":"Apparel"
         },{
           "name":"Innerwear",
-          "amazonNodeId":"1968126031"
+          "amazonNodeId":"1968126031",
+          "amazonSearchIndex":"Apparel"
         },{
           "name":"Shorts",
-          "amazonNodeId":"1968097031"
+          "amazonNodeId":"1968097031",
+          "amazonSearchIndex":"Apparel"
         },{
           "name":"Sportswear",
-          "amazonNodeId":"1968062031"
+          "amazonNodeId":"1968062031",
+          "amazonSearchIndex":"Apparel"
         },{
           "name":"Sunglasses & Spectacle Frames",
-          "amazonNodeId":"1968032031"
+          "amazonNodeId":"1968032031",
+          "amazonSearchIndex":"Apparel"
         },{
           "name":"Socks",
-          "amazonNodeId":"1968103031"
+          "amazonNodeId":"1968103031",
+          "amazonSearchIndex":"Apparel"
         },{
           "name":"Rainwear",
-          "amazonNodeId":"1968098031"
+          "amazonNodeId":"1968098031",
+          "amazonSearchIndex":"Apparel"
         },{
           "name":"Accessories",
-          "amazonNodeId":"1968025031"
+          "amazonNodeId":"1968025031",
+          "amazonSearchIndex":"Apparel"
         },{
           "name":"Ethnic Wear",
-          "amazonNodeId":"1968248031"
+          "amazonNodeId":"1968248031",
+          "amazonSearchIndex":"Apparel"
         },{
           "name":"Trousers",
-          "amazonNodeId":"1968125031"
+          "amazonNodeId":"1968125031",
+          "amazonSearchIndex":"Apparel"
         },{
           "name":"Jackets",
-          "amazonNodeId":"1968088031"
+          "amazonNodeId":"1968088031",
+          "amazonSearchIndex":"Apparel"
         },{
           "name":"Suits & Blazers",
-          "amazonNodeId":"1968107031"
+          "amazonNodeId":"1968107031",
+          "amazonSearchIndex":"Apparel"
         },{
           "name":"Sweatshirts & Hoodies",
-          "amazonNodeId":"11960414031"
+          "amazonNodeId":"11960414031",
+          "amazonSearchIndex":"Apparel"
         },{
           "name":"Sweaters",
-          "amazonNodeId":"1968077031"
+          "amazonNodeId":"1968077031",
+          "amazonSearchIndex":"Apparel"
         },{
           "name":"Sleep & Lounge Wear",
-          "amazonNodeId":"1968082031"
+          "amazonNodeId":"1968082031",
+          "amazonSearchIndex":"Apparel"
         },{
           "name":"Unstitched Fabric",
-          "amazonNodeId":"5229856031"
+          "amazonNodeId":"5229856031",
+          "amazonSearchIndex":"Apparel"
         },{
           "name":"Sportswear",
-          "":"1968062031"
+          "":"1968062031",
+          "amazonSearchIndex":"Apparel"
         },{
           "name":"Shoes",
           "":""
@@ -155,9 +188,37 @@
         },{
           "name":"Gaming Consoles"
         },{
-          "name":"All Electronics"
+          "name":"Air Coolers",
+          "amazonNodeId":"5130993031",
+          "amazonSearchIndex":"Electronics"
         },{
-          "name":"Air Conditioners"
+          "name":"Air Purifiers",
+          "amazonNodeId":"5403404031",
+          "amazonSearchIndex":"Electronics"
+        },{
+          "name":"Dehumidifiers",
+          "amazonNodeId":"5403405031",
+          "amazonSearchIndex":"Electronics"
+        },{
+          "name":"Fans",
+          "amazonNodeId":"2083427031",
+          "amazonSearchIndex":"Electronics"
+        },{
+          "name":"Humidifiers",
+          "amazonNodeId":"5403407031",
+          "amazonSearchIndex":"Electronics"
+        },{
+          "name":"Parts & Accessories",
+          "amazonNodeId":"5403408031",
+          "amazonSearchIndex":"Electronics"
+        },{
+          "name":"Room Heaters",
+          "amazonNodeId":"2083424031",
+          "amazonSearchIndex":"Electronics"
+        },{
+          "name":"Water Heaters",
+          "amazonNodeId":"2083425031",
+          "amazonSearchIndex":"Electronics"
         },{
           "name":"Refrigerators"
         },{
@@ -273,29 +334,64 @@
 
       vm.navigationBarAutomobile = [
         {
-          "name":"Motorbike Accessories & Parts"
+          "name":"Automotive Services",
+          "amazonNodeId":"11622248031",
+          "amazonSearchIndex":"Automotive"
+        }, {
+          "name":"Car & Motorbike Care",
+          "amazonNodeId":"5257472031",
+          "amazonSearchIndex":"Automotive"
         },{
-          "name":"Car Accessories"
+          "name":"Car & Vehicle Electronics",
+          "amazonNodeId":"5257473031",
+          "amazonSearchIndex":"Automotive"
         },{
-          "name":"Car Electronics"
+          "name":"Car Accessories",
+          "amazonNodeId":"5257474031",
+          "amazonSearchIndex":"Automotive"
         },{
-          "name":"Car Parts"
+          "name":"Car Parts",
+          "amazonNodeId":"5257475031",
+          "amazonSearchIndex":"Automotive"
         },{
-          "name":"Car & Bike Care"
+          "name":"Car Tyres & Rims",
+          "amazonNodeId":"5257476031",
+          "amazonSearchIndex":"Automotive"
         },{
-          "name":"All Car & Motorbike Products"
+          "name":"Motorbike Accessories & Parts",
+          "amazonNodeId":"5257478031",
+          "amazonSearchIndex":"Automotive"
         },{
-          "name":"Industrial & Scientific Supplies"
+          "name":"Navigation Devices",
+          "amazonNodeId":"5257480031",
+          "amazonSearchIndex":"Automotive"
         },{
-          "name":"Test, Measure & Inspect"
+          "name":"Oils & Fluids",
+          "amazonNodeId":"5257481031",
+          "amazonSearchIndex":"Automotive"
         },{
-          "name":"Lab & Scientific"
+          "name":"Paintwork",
+          "amazonNodeId":"5257482031",
+          "amazonSearchIndex":"Automotive"
         },{
-          "name":"Janitorial & Sanitation Supplies"
+          "name":"Transporting & Storage",
+          "amazonNodeId":"5257484031",
+          "amazonSearchIndex":"Automotive"
+        },{
+          "name":"Vehicle Tools",
+          "amazonNodeId":"5257483031",
+          "amazonSearchIndex":"Automotive"
         }
       ];
 
 
     };
+
+    vm.findProductList = function (item) {
+      console.log(item)
+      navFactory.productList(item.amazonNodeId, item.amazonSearchIndex).then( function (response) {
+        console.log(response);
+      })
+    }
   }
 })();

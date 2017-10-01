@@ -12,6 +12,10 @@
 .sweet-alert button.cancel:active {
   background-color: #B22222; }
 
+
+.btn-group:hover>.dropdown-menu {
+  display: block;
+}
 /*.container {*/
   /*margin: 0 auto;*/
   /*padding: 40px;*/
