@@ -34,17 +34,18 @@
     //   return promise;
     // };
     //
-    // service.getSociety = function(data){
-    //   var promise = $http.get(__env.dataServerUrl + '/societies')
-    //     .then(
-    //       function (response) {
-    //         return response;
-    //       },
-    //       function (response) {
-    //         return response;
-    //       });
-    //   return promise;
-    // };
+    service.getProductList = function (nodeId , searchIndex) {
+
+      var promise = $http.get(__env.dataServerUrl + '/user/' + nodeId + '/page/'+ 2 + '/getNavigationBoard?searchIndex=' + searchIndex)
+        .then(
+          function (response) {
+            return response;
+          },
+          function (response) {
+            return response;
+          });
+      return promise;
+    };
 
     return service;
   };

@@ -5,9 +5,9 @@
     .module('app.nav')
     .controller('NavController', NavController);
 
-  NavController.$inject = ['$q', 'toaster', '$localStorage', 'role' , 'navFactory' , '$scope'];
+  NavController.$inject = ['$q', 'toaster', '$localStorage', 'role' , 'navFactory' , '$scope' , '$state'];
   /* @ngInject */
-  function NavController($q, toaster, $localStorage, role , navFactory , $scope) {
+  function NavController($q, toaster, $localStorage, role , navFactory , $scope , $state) {
     var vm = this;
 
     activate();
@@ -389,9 +389,7 @@
 
     vm.findProductList = function (item) {
       console.log(item)
-      navFactory.productList(item.amazonNodeId, item.amazonSearchIndex).then( function (response) {
-        console.log(response);
-      })
+      $state.go('app.product' , {obj:item});
     }
   }
 })();

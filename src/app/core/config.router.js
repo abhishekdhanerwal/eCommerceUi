@@ -48,6 +48,7 @@ function ($stateProvider, $urlRouterProvider, $controllerProvider, $compileProvi
       templateUrl: "app/product/product.html",
       resolve: loadSequence('d3', 'ui.knob', 'countTo', 'dashboardCtrl'),
       controller: 'ProductCtrl',
+      params: { obj: null, },
       controllerAs: 'vm',
       title: 'Product',
       ncyBreadcrumb: {
