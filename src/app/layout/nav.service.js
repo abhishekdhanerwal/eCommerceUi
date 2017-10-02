@@ -12,7 +12,7 @@
 
     service.productList = function (nodeId , searchIndex) {
 
-      var promise = $http.get(__env.dataServerUrl + '/getNavigationBoard')
+      var promise = $http.get(__env.dataServerUrl + '/user/' + nodeId + '/getNavigationBoard')
         .then(
           function (response) {
             return response;
