@@ -84,7 +84,7 @@
 			<!--</li>-->
 
       <li class="mega-menu" uib-dropdown uib-dropdown auto-close="outsideClick" ng-class="{'active':$state.includes('app.men')}">
-        <a href="javascript:void(0)" uib-dropdown-toggle> <letter-icon data="Men" color="auto" char-count="2" size="sm"></letter-icon> <span>Men</span> <span class="caret"></span></a>
+        <a href="javascript:void(0)" uib-dropdown-toggle> <letter-icon data="Men" color="auto" char-count="2" size="sm"></letter-icon> <span class="hidden-md">Men</span> <span class="caret"></span></a>
         <ul uib-dropdown-menu>
           <li>
 
@@ -110,7 +110,7 @@
       </li>
 
       <li class="mega-menu" uib-dropdown uib-dropdown auto-close="outsideClick" ng-class="{'active':$state.includes('app.men')}">
-        <a href="javascript:void(0)" uib-dropdown-toggle> <letter-icon data="Mobiles & Computers" color="auto" char-count="2" size="sm"></letter-icon> <span>Mobiles & Computers</span> <span class="caret"></span></a>
+        <a href="javascript:void(0)" uib-dropdown-toggle> <letter-icon data="Mobiles & Computers" color="auto" char-count="2" size="sm"></letter-icon> <span class="hidden-md">Mobiles & Computers</span> <span class="caret"></span></a>
         <ul uib-dropdown-menu>
           <li>
 
@@ -136,7 +136,7 @@
       </li>
 
       <li class="mega-menu" uib-dropdown uib-dropdown auto-close="outsideClick" ng-class="{'active':$state.includes('app.men')}">
-        <a href="javascript:void(0)" uib-dropdown-toggle> <letter-icon data="Electronics" color="auto" char-count="2" size="sm"></letter-icon> <span>Electronics</span> <span class="caret"></span></a>
+        <a href="javascript:void(0)" uib-dropdown-toggle> <letter-icon data="Electronics" color="auto" char-count="2" size="sm"></letter-icon> <span class="hidden-md">Electronics</span> <span class="caret"></span></a>
         <ul uib-dropdown-menu>
           <li>
 
@@ -162,33 +162,7 @@
       </li>
 
       <li class="mega-menu" uib-dropdown uib-dropdown auto-close="outsideClick" ng-class="{'active':$state.includes('app.men')}">
-        <a href="javascript:void(0)" uib-dropdown-toggle> <letter-icon data="Home & Pets" color="auto" char-count="2" size="sm"></letter-icon> <span>Home & Pets</span> <span class="caret"></span></a>
-        <ul uib-dropdown-menu>
-          <li>
-
-            <div class="mega-menu-content" style="background-image: url(../../images/lifePlayTrip/nav_background.jpg)">
-              <div>
-                <ul class="mega-sub-menu padding-top-0">
-
-                  <li>
-                    <ul>
-                      <li ui-sref-active="active" class="col-md-3"  ng-repeat="item in vm.navigationBarHome track by $index">
-                        <a ui-sref="app.table.basic"> <span><strong>{{item.name}}</strong></span> </a>
-                      </li>
-                    </ul>
-                  </li>
-
-
-                </ul>
-              </div>
-            </div>
-
-          </li>
-        </ul>
-      </li>
-
-      <li class="mega-menu" uib-dropdown uib-dropdown auto-close="outsideClick" ng-class="{'active':$state.includes('app.men')}">
-        <a href="javascript:void(0)" uib-dropdown-toggle> <letter-icon data="Health" color="auto" char-count="2" size="sm"></letter-icon> <span>Health</span> <span class="caret"></span></a>
+        <a href="javascript:void(0)" uib-dropdown-toggle> <letter-icon data="Health" color="auto" char-count="2" size="sm"></letter-icon> <span class="hidden-md">Health</span> <span class="caret"></span></a>
         <ul uib-dropdown-menu>
           <li>
 
@@ -214,7 +188,7 @@
       </li>
 
       <li class="mega-menu" uib-dropdown uib-dropdown auto-close="outsideClick" ng-class="{'active':$state.includes('app.men')}">
-        <a href="javascript:void(0)" uib-dropdown-toggle> <letter-icon data="Sports & Travel" color="auto" char-count="2" size="sm"></letter-icon> <span>Sports & Travel</span> <span class="caret"></span></a>
+        <a href="javascript:void(0)" uib-dropdown-toggle> <letter-icon data="Sports & Travel" color="auto" char-count="2" size="sm"></letter-icon> <span class="hidden-md">Sports & Travel</span> <span class="caret"></span></a>
         <ul uib-dropdown-menu>
           <li>
 
@@ -240,7 +214,33 @@
       </li>
 
       <li class="mega-menu" uib-dropdown uib-dropdown auto-close="outsideClick" ng-class="{'active':$state.includes('app.men')}">
-        <a href="javascript:void(0)" uib-dropdown-toggle> <letter-icon data="Automobile & Industrial" color="auto" char-count="2" size="sm"></letter-icon> <span>Automobile & Industrial</span> <span class="caret"></span></a>
+        <a href="javascript:void(0)" uib-dropdown-toggle> <letter-icon data="Home & Pets" color="auto" char-count="2" size="sm"></letter-icon> <span class="hidden-md">Home</span> <span class="caret"></span></a>
+        <ul uib-dropdown-menu>
+          <li>
+
+            <div class="mega-menu-content" style="background-image: url(../../images/lifePlayTrip/nav_background.jpg)">
+              <div>
+                <ul class="mega-sub-menu padding-top-0">
+
+                  <li>
+                    <ul>
+                      <li ui-sref-active="active" class="col-md-3"  ng-repeat="item in vm.navigationBarHome track by $index">
+                        <a ui-sref="app.table.basic"> <span><strong>{{item.name}}</strong></span> </a>
+                      </li>
+                    </ul>
+                  </li>
+
+
+                </ul>
+              </div>
+            </div>
+
+          </li>
+        </ul>
+      </li>
+
+      <li class="mega-menu" uib-dropdown uib-dropdown auto-close="outsideClick" ng-class="{'active':$state.includes('app.men')}">
+        <a href="javascript:void(0)" uib-dropdown-toggle> <letter-icon data="Automobile & Industrial" color="auto" char-count="2" size="sm"></letter-icon> <span class="hidden-md">Automobile & Industrial</span> <span class="caret"></span></a>
         <ul uib-dropdown-menu>
           <li>
 
@@ -266,7 +266,7 @@
       </li>
 
       <li class="mega-menu" uib-dropdown uib-dropdown auto-close="outsideClick" ng-class="{'active':$state.includes('app.men')}">
-        <a href="javascript:void(0)" uib-dropdown-toggle> <letter-icon data="Movies Games & Books" color="auto" char-count="2" size="sm"></letter-icon> <span>Movies Games & Books</span> <span class="caret"></span></a>
+        <a href="javascript:void(0)" uib-dropdown-toggle> <letter-icon data="Movies Games & Books" color="auto" char-count="2" size="sm"></letter-icon> <span class="hidden-md">Movies Games Books</span> <span class="caret"></span></a>
         <ul uib-dropdown-menu>
           <li>
 

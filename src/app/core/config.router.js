@@ -44,7 +44,7 @@ function ($stateProvider, $urlRouterProvider, $controllerProvider, $compileProvi
         label: 'Home'
       }
     }).state('app.product', {
-      url: "/product",
+      url: "/product/:id",
       templateUrl: "app/product/product.html",
       resolve: loadSequence('d3', 'ui.knob', 'countTo', 'dashboardCtrl'),
       controller: 'ProductCtrl',

@@ -89,5 +89,8 @@
       "jasmine": true,
       "protractor": true
     }
+  },
+  "dependencies": {
+    "underscore": "^1.8.3"
   }
 }

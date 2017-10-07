@@ -81,3 +81,18 @@ body
   text-shadow: none;
   color: #ffffff;
 }
+
+div.scrollUserList {
+  height: 300px;
+  overflow-y: scroll;
+}
+
+/*.style-2{*/
+  /*padding: 10px;*/
+  /*border: solid 5px #c9c9c9;*/
+  /*transition: border 0.3s;*/
+/*}*/
+/*.style-2:focus,*/
+/*.style-2.focus {*/
+  /*border: solid 5px #969696;*/
+/*}*/

@@ -1,67 +1,36 @@
-<wave-spinner ng-show="vm.progress" ></wave-spinner>
-
-
-<div ng-show="!vm.progress" class="container-fluid container-fullw">
+<div class="container-fluid container-fullw">
 
     <div class="row">
 
       <div class="col-md-2">
 
-        <div class="panel panel-white">
+        <div ng-if="!vm.progress" class="panel panel-white">
 
           <div class="panel-heading">
             <span class="input-icon">
           <input type="text" placeholder="Filter brands" class="form-control" name="name"
-                 ng-model="vm.filter" ng-maxlength="30" required/>
+                 ng-model="vm.brandName" ng-maxlength="30" ng-keyup="vm.filterBrandName()" required/>
             <i class="ti-search"></i></span>
           </div>
 
-          <div class="panel-body">
+          <div class="panel-body scrollUserList">
 
-            <div class="col-md-12 checkbox clip-check check-primary checkbox-inline">
-              <input type="checkbox" id="checkbox10" value="1" checked="">
-              <label for="checkbox10">
-                Adidas
-              </label>
-            </div>
-            <div class="col-md-12 checkbox clip-check check-success checkbox-inline">
-              <input type="checkbox" id="checkbox11" value="1" checked="">
-              <label for="checkbox11">
-                Nike
-              </label>
-            </div>
-            <div class="col-md-12 checkbox clip-check check-warning checkbox-inline">
-              <input type="checkbox" id="checkbox12" value="1" checked="">
-              <label for="checkbox12">
-                Bata
-              </label>
-            </div>
-            <div class="col-md-12 checkbox clip-check check-danger checkbox-inline">
-              <input type="checkbox" id="checkbox13" value="1" checked="">
-              <label for="checkbox13">
-                Reebok
-              </label>
-            </div>
-            <div class="col-md-12 checkbox clip-check check-info checkbox-inline">
-              <input type="checkbox" id="checkbox14" value="1" checked="">
-              <label for="checkbox14">
-                LV
-              </label>
-            </div>
-            <div class="col-md-12 checkbox clip-check check-purple checkbox-inline">
-              <input type="checkbox" id="checkbox15" value="1" checked="">
-              <label for="checkbox15">
-                Zara
-              </label>
-            </div>
+            <li style="list-style: none" ng-repeat="row in vm.filterBrands">
+              <div class="col-md-12 checkbox clip-check check-purple checkbox-inline">
+                <input type="checkbox" id="{{row.name}}" value="row.check" ng-model="row.check" ng-click="vm.filterSelected(row)">
+                  <label for="{{row.name}}">
+                    {{row.name}}
+                  </label>
+              </div>
+            </li>
 
           </div>
         </div>
 
-          <div class="panel panel-white">
+          <div ng-if="!vm.progress" class="panel panel-white">
             <div class="panel-heading">
-              <div class="panel-title">
-                Filter by price - 10$ - 20$
+              <div class="panel-title text-center">
+                Filter By Price
               </div>
             </div>
             <div class="panel-body">
@@ -88,23 +57,64 @@
 
       </div>
 
-      <div class="col-md-8">
+      <double-bounce-spinner ng-show="vm.progress" ></double-bounce-spinner>
 
-        <div class="panel panel-white" ng-repeat="item in vm.productList">
-          <div class="row">
-            <div class="col-md-4 img-responsive">
-              <img ng-src="{{item.imageUrl}}">
-            </div>
-            <div class="col-md-4">
-              <div ng-repeat="row in item.feature">
-                {{row}}
+      <div ng-if="!vm.progress" class="col-md-9">
+        <div ng-repeat="item in vm.productList">
+        <div class="panel panel-white col col-md-4" style="height: 500px">
+          <fieldset class="margin-right-5 margin-left-5" style="height: 465px">
+            <div class="row">
+
+              <img class="img-responsive text-center" style="margin:auto; height: 300px" ng-src="{{item.imageUrl}}">
+              <div class="text-center"><strong>{{item.title}}</strong></div>
+              <div class="row text-center margin-top-5 margin-bottom-5">
+                <h3 style="color:#1287A8"><strong>&#8377; {{item.amount}}</strong></h3>
               </div>
+              <button type="button" class="btn btn-wide btn-block btn-orange btn-squared" ng-click="vm.buyItem(item.itemURL)"><i class="ti-shopping-cart"></i> Buy Now</button>
+
             </div>
-            <div class="col-md-4">
-              {{item.amount}}
-              <button >Buy Now</button>
-            </div>
-          </div>
+          </fieldset>
+        </div>
+        </div>
+
+        <div class="panel panel-white col col-md-12 text-center">
+          <ul ng-if="vm.pager.pages.length" class="pagination">
+            <li ng-class="{disabled:vm.pager.currentPage === 1}">
+              <a ng-click="vm.setPage(1)">First</a>
+            </li>
+            <li ng-class="{disabled:vm.pager.currentPage === 1}">
+              <a ng-click="vm.setPage(vm.pager.currentPage - 1)">Previous</a>
+            </li>
+            <li ng-repeat="page in vm.pager.pages" ng-class="{active:vm.pager.currentPage === page}">
+              <a ng-click="vm.setPage(page)">{{page}}</a>
+            </li>
+            <li ng-class="{disabled:vm.pager.currentPage === vm.pager.totalPages}">
+              <a ng-click="vm.setPage(vm.pager.currentPage + 1)">Next</a>
+            </li>
+            <li ng-class="{disabled:vm.pager.currentPage === vm.pager.totalPages}">
+              <a ng-click="vm.setPage(vm.pager.totalPages)">Last</a>
+            </li>
+          </ul>
+          <!--<ul class="pagination pagination-blue margin-bottom-10">-->
+            <!--<li class="disabled">-->
+              <!--<a href="#"><i class="ti-angle-left"></i></a>-->
+            <!--</li>-->
+            <!--<li ng-class="vm.currentPage+1 == 1 ? 'active':''">-->
+              <!--<a href="#"> 1 </a>-->
+            <!--</li>-->
+            <!--<li>-->
+              <!--<a href="#"> 2 </a>-->
+            <!--</li>-->
+            <!--<li>-->
+              <!--<a href="#"> 3 </a>-->
+            <!--</li>-->
+            <!--<li>-->
+              <!--<a href="#"> 4 </a>-->
+            <!--</li>-->
+            <!--<li>-->
+              <!--<a href="#"><i class="ti-angle-right"></i></a>-->
+            <!--</li>-->
+          <!--</ul>-->
         </div>
 
       </div>

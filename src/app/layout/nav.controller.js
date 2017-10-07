@@ -388,8 +388,8 @@
     };
 
     vm.findProductList = function (item) {
-      console.log(item)
-      $state.go('app.product' , {obj:item});
+
+      $state.go('app.product' , {obj:item , id:item.name});
     }
   }
 })();

@@ -12,7 +12,7 @@ function ($rootScope, $state, $stateParams , $window ) {
     // GLOBAL APP SCOPE
     // set below basic information
     $rootScope.app = {
-        name: 'LifePlayTrip', // name of your project
+        name: 'Menz Bazaar', // name of your project
         author: 'kapil', // author's name or company name
         description: 'Shopping festival', // brief description
         version: '1.0', // current version
