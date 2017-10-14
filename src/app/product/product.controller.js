@@ -23,7 +23,7 @@
       vm.progress = true;
       if(page == undefined)
         page = 1;
-      productFactory.getProductList($localStorage.currentItem.amazonNodeId, $localStorage.currentItem.amazonSearchIndex , page).then( function (response) {
+      productFactory.getProductList($localStorage.currentItem.amazonNodeId, $localStorage.currentItem.amazonSearchIndex , page , $localStorage.currentItem.sort).then( function (response) {
         console.log(response);
 
         if(response.status == 200){
@@ -162,8 +162,8 @@
 
     }
 
-    vm.buyItem = function(url){
-      $window.open(url);
+    vm.buyItem = function(item){
+      $state.go('app.item',{id:item.asinId});
     }
 
     vm.filterBrandName = function () {

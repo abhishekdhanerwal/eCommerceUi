@@ -109,6 +109,15 @@ function ($stateProvider, $urlRouterProvider, $controllerProvider, $compileProvi
       ncyBreadcrumb: {
         label: 'SMS'
       }
+    }).state('app.item', {
+      url: '/item/:id',
+      templateUrl: "app/item/item.html",
+      controller: 'ItemCtrl',
+      controllerAs: 'vm',
+      title: 'Item',
+      ncyBreadcrumb: {
+        label: 'Item'
+      }
     })
 
 

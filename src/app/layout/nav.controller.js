@@ -5,9 +5,9 @@
     .module('app.nav')
     .controller('NavController', NavController);
 
-  NavController.$inject = ['$q', 'toaster', '$localStorage', 'role' , 'navFactory' , '$scope' , '$state'];
+  NavController.$inject = ['$q', 'toaster', '$localStorage', 'role' , '$scope' , '$state'];
   /* @ngInject */
-  function NavController($q, toaster, $localStorage, role , navFactory , $scope , $state) {
+  function NavController($q, toaster, $localStorage, role ,  $scope , $state) {
     var vm = this;
 
     activate();
@@ -37,79 +37,98 @@
         {
           "name":"T-shirts & Polos",
           "amazonNodeId":"1968120031",
-          "amazonSearchIndex":"Apparel"
+          "amazonSearchIndex":"Apparel",
+          "sort":"reviewrank_authority"
         },{
           "name":"Shirts",
           "amazonNodeId":"1968093031",
-          "amazonSearchIndex":"Apparel"
+          "amazonSearchIndex":"Apparel",
+          "sort":"reviewrank_authority"
         },{
           "name":"Jeans",
           "amazonNodeId":"1968076031",
-          "amazonSearchIndex":"Apparel"
+          "amazonSearchIndex":"Apparel",
+          "sort":"reviewrank_authority"
         },{
           "name":"Innerwear",
           "amazonNodeId":"1968126031",
-          "amazonSearchIndex":"Apparel"
+          "amazonSearchIndex":"Apparel",
+          "sort":"reviewrank_authority"
         },{
           "name":"Shorts",
           "amazonNodeId":"1968097031",
-          "amazonSearchIndex":"Apparel"
+          "amazonSearchIndex":"Apparel",
+          "sort":"reviewrank_authority"
         },{
           "name":"Sportswear",
           "amazonNodeId":"1968062031",
-          "amazonSearchIndex":"Apparel"
+          "amazonSearchIndex":"Apparel",
+          "sort":"reviewrank_authority"
         },{
           "name":"Sunglasses & Spectacle Frames",
           "amazonNodeId":"1968032031",
-          "amazonSearchIndex":"Apparel"
+          "amazonSearchIndex":"Apparel",
+          "sort":"reviewrank_authority"
         },{
           "name":"Socks",
           "amazonNodeId":"1968103031",
-          "amazonSearchIndex":"Apparel"
+          "amazonSearchIndex":"Apparel",
+          "sort":"reviewrank_authority"
         },{
           "name":"Rainwear",
           "amazonNodeId":"1968098031",
-          "amazonSearchIndex":"Apparel"
+          "amazonSearchIndex":"Apparel",
+          "sort":"reviewrank_authority"
         },{
           "name":"Accessories",
           "amazonNodeId":"1968025031",
-          "amazonSearchIndex":"Apparel"
+          "amazonSearchIndex":"Apparel",
+          "sort":"reviewrank_authority"
         },{
           "name":"Ethnic Wear",
           "amazonNodeId":"1968248031",
-          "amazonSearchIndex":"Apparel"
+          "amazonSearchIndex":"Apparel",
+          "sort":"reviewrank_authority"
         },{
           "name":"Trousers",
           "amazonNodeId":"1968125031",
-          "amazonSearchIndex":"Apparel"
+          "amazonSearchIndex":"Apparel",
+          "sort":"reviewrank_authority"
         },{
           "name":"Jackets",
           "amazonNodeId":"1968088031",
-          "amazonSearchIndex":"Apparel"
+          "amazonSearchIndex":"Apparel",
+          "sort":"reviewrank_authority"
         },{
           "name":"Suits & Blazers",
           "amazonNodeId":"1968107031",
-          "amazonSearchIndex":"Apparel"
+          "amazonSearchIndex":"Apparel",
+          "sort":"reviewrank_authority"
         },{
           "name":"Sweatshirts & Hoodies",
           "amazonNodeId":"11960414031",
-          "amazonSearchIndex":"Apparel"
+          "amazonSearchIndex":"Apparel",
+          "sort":"reviewrank_authority"
         },{
           "name":"Sweaters",
           "amazonNodeId":"1968077031",
-          "amazonSearchIndex":"Apparel"
+          "amazonSearchIndex":"Apparel",
+          "sort":"reviewrank_authority"
         },{
           "name":"Sleep & Lounge Wear",
           "amazonNodeId":"1968082031",
-          "amazonSearchIndex":"Apparel"
+          "amazonSearchIndex":"Apparel",
+          "sort":"reviewrank_authority"
         },{
           "name":"Unstitched Fabric",
           "amazonNodeId":"5229856031",
-          "amazonSearchIndex":"Apparel"
+          "amazonSearchIndex":"Apparel",
+          "sort":"reviewrank_authority"
         },{
           "name":"Sportswear",
-          "":"1968062031",
-          "amazonSearchIndex":"Apparel"
+          "amazonNodeId":"1968062031",
+          "amazonSearchIndex":"Apparel",
+          "sort":"reviewrank_authority"
         },{
           "name":"Shoes",
           "":""

@@ -10,9 +10,9 @@
   function productFactory($http) {
     var service = {};
 
-    service.getProductList = function (nodeId , searchIndex , page) {
+    service.getProductList = function (nodeId , searchIndex , page, sort) {
 
-      var promise = $http.get(__env.dataServerUrl + '/user/' + nodeId + '/page/'+ page + '/getNavigationBoard?searchIndex=' + searchIndex)
+      var promise = $http.get(__env.dataServerUrl + '/user/' + nodeId + '/page/'+ page + '/getNavigationBoard?sort=' + sort +'&searchIndex=' + searchIndex )
         .then(
           function (response) {
             return response;

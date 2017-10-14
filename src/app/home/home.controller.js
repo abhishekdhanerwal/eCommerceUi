@@ -15,9 +15,9 @@
 
     function activate() {
 
-      homeFactory.changeXMLtoJSON().then(function (response) {
-        console.log(response)
-      });
+      // homeFactory.changeXMLtoJSON().then(function (response) {
+      //   console.log(response)
+      // });
 
       $(".single-item").slick({
         dots: false,

@@ -6,6 +6,7 @@
         'app.home',
         'app.admin',
         'app.adminUi',
-        'app.product'
+        'app.product',
+        'app.item'
     ]);
 })();

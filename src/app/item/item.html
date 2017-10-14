@@ -1,0 +1,93 @@
+
+<div class="container-fluid container-fullw">
+
+  <div class="row">
+
+    <div class="col-md-4">
+
+      <div ng-if="!vm.progress" class="panel panel-white">
+
+        <fieldset class="margin-right-10 margin-left-10 text-center">
+          <div class="margin-bottom-5">
+            <img style="height: 350px" class="img-responsive" ng-src="{{vm.setImage}}">
+          </div>
+          <div class="row" style="background-color: grey">
+            <div class="col-md-12 margin-top-10 margin-bottom-10">
+
+              <script type="text/ng-template" id="tpl.html">
+                <a ng-mouseover="vm.changeImage(i)"><img style="height: 70px;width: 70px" class="" style="height: 50px;width: 50px" ng-src="{{i}}"></a>
+              </script>
+
+              <slick class="slider" settings="vm.slickConfig3" ng-if="vm.slickConfig3Loaded">
+                <div class="col-md-2" ng-repeat="i in vm.item[0].imageSet track by $index">
+                  <div class="" ng-include="'tpl.html'"></div>
+                </div>
+              </slick>
+
+              <!--<div class="slider slider-nav">-->
+                <!--<div class="col-md-2"><img class="img-responsive" src="../../images/avatar-1-big.jpg"></div>-->
+                <!--<div class="col-md-2"><img class="img-responsive" src="../../images/avatar-2.jpg"></div>-->
+                <!--<div class="col-md-2"><img class="img-responsive" src="../../images/avatar-3.jpg"></div>-->
+                <!--<div class="col-md-2"><img class="img-responsive" src="../../images/avatar-4.jpg"></div>-->
+                <!--<div class="col-md-2"><img class="img-responsive" src="../../images/avatar-5.jpg"></div>-->
+                <!--<div class="col-md-2"><img class="img-responsive" src="../../images/avatar-6.jpg"></div>-->
+              <!--</div>-->
+
+            </div>
+          </div>
+        </fieldset>
+
+      </div>
+
+    </div>
+
+    <div class="col col-md-6">
+
+      <div ng-if="!vm.progress" class="panel panel-white">
+
+        <fieldset class="margin-right-10 margin-left-10">
+          <div class="well well-sm text-success text-center">
+            {{vm.item[0].Brand}}
+          </div>
+
+          <div class="margin-bottom-10 text-center">
+            <span class="text-success" style="font-size: 25px"><strong> &#8377; {{vm.item[0].Amount}} </strong></span>
+            <span class="text-danger"><strike>3999</strike></span>
+            <span class="text-success" style="font-size: 15px">10% Off</span>
+          </div>
+
+          <!--<div class="margin-bottom-10">-->
+            <!--<uib-rating ng-model="3.5" max="5" read-only="true" state-on="'fa fa-star text-yellow text-extra-large margin-right-5'" state-off="'fa fa-star-o text-large margin-right-5'"></uib-rating>-->
+          <!--</div>-->
+
+          <div class="margin-bottom-10 text-center">
+            <span class="">Size </span> <span style="font-size: 15px" class="badge badge-danger text-2x">{{vm.item[0].ClothingSize}}</span>
+          </div>
+
+          <div class="margin-bottom-10 text-center">
+            Color - {{vm.item[0].Color}}
+          </div>
+
+          <hr>
+
+          <div class="margin-bottom-10">
+            Features
+            <li>100 % cotton </li><li> Washable </li>
+          </div>
+
+          <div class="margin-bottom-10 text-center">
+            <button type="button" class="btn btn-wide btn-lg btn-orange btn-squared" ng-click="vm.buyItem(item.itemURL)"><i class="ti-shopping-cart"></i> Buy Now</button>
+
+          </div>
+
+        </fieldset>
+
+      </div>
+
+    </div>
+
+    <double-bounce-spinner ng-show="vm.progress" ></double-bounce-spinner>
+
+  </div>
+
+</div>
